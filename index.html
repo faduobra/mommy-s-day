@@ -17,12 +17,11 @@
 
         body { font-family: 'Jost', 'Noto Sans TC', sans-serif; background-color: var(--fadu-warm); margin: 0; padding: 0; color: var(--text-main); letter-spacing: 0.05em; overflow-x: hidden; }
 
-        /* 🌸 首頁標題區 */
+        /* 🌸 首頁標題與 Hero */
         .header-section { padding: 60px 20px 80px; text-align: center; background: linear-gradient(180deg, #fdf1f2 0%, var(--fadu-warm) 100%); }
         .header-section span { font-size: 11px; letter-spacing: 0.4em; color: var(--fadu-rose); font-weight: 500; }
         .header-section h1 { font-size: 28px; margin: 15px 0 0; font-weight: 900; line-height: 1.4; }
 
-        /* 🎀 頂部主卡片 */
         .hero-promo-container { width: 90%; margin: -50px auto 40px; position: relative; z-index: 10; }
         .hero-promo-card {
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
@@ -30,7 +29,7 @@
             box-shadow: 0 20px 45px rgba(214, 140, 146, 0.15); border: 1px solid #fff;
         }
 
-        /* 🛍️ 首頁導購入口 (橫式小卡) */
+        /* 🛍️ 首頁入口 */
         .nav-section { width: 92%; margin: 0 auto 40px; }
         .nav-card {
             background: var(--white); border-radius: 20px; margin-bottom: 20px;
@@ -42,7 +41,7 @@
         .nav-info-bar h2 { margin: 0; font-size: 18px; font-weight: 900; }
         .nav-info-bar span { color: var(--fadu-rose); font-size: 12px; font-weight: 700; margin-top: 5px; display: block; }
 
-        /* 📦 彈窗通用樣式 */
+        /* 📦 彈窗樣式 */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); }
         .modal-content { background: var(--fadu-warm); margin: 8% auto; padding: 0; width: 92%; max-height: 80vh; border-radius: 30px; overflow-y: auto; position: relative; animation: slideUp 0.3s ease; }
         @keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
@@ -50,21 +49,24 @@
         .modal-body { padding: 40px 15px 30px; }
         .modal-title { text-align: center; font-size: 20px; font-weight: 900; color: var(--text-main); margin-bottom: 25px; }
 
-        /* 🖼️ 多圖活動卡片樣式 */
+        /* 🖼️ 多圖活動卡片 (優化間距) */
         .visual-item-v2 { background: #fff; border-radius: 20px; margin-bottom: 20px; padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #fdf2f3; }
-        .item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .item-header h4 { margin: 0; font-size: 16px; font-weight: 900; }
-        .price-badge-small { background: var(--fadu-rose); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; }
+        
+        /* 緊湊標題區 */
+        .item-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+        .item-header h4 { margin: 0; font-size: 16px; font-weight: 900; letter-spacing: -0.02em; }
+        .price-badge-small { background: var(--fadu-rose); color: #fff; padding: 3px 8px; border-radius: 5px; font-size: 12px; font-weight: 700; }
 
+        /* 圖片滑動 */
         .image-scroll-container { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; -ms-overflow-style: none; }
         .image-scroll-container::-webkit-scrollbar { display: none; }
-        .scroll-img { width: 140px; height: 140px; border-radius: 12px; object-fit: cover; flex-shrink: 0; border: 1px solid #fdf2f3; }
-        .item-desc-text { font-size: 12px; color: var(--fadu-taupe); line-height: 1.5; margin-top: 8px; }
+        .scroll-img { width: 150px; height: 150px; border-radius: 12px; object-fit: cover; flex-shrink: 0; border: 1px solid #fdf2f3; }
+        .item-desc-text { font-size: 12px; color: var(--fadu-taupe); line-height: 1.5; margin-top: 4px; }
 
         /* 🎁 限量滿額禮 */
         .gift-showcase { width: 90%; margin: 40px auto; background: #fff; border-radius: 20px; padding: 25px; border: 1px solid #fdf2f3; text-align: center; }
         
-        /* 🔥 強化版導購按鈕 */
+        /* 🔥 導購按鈕 */
         .btn-group { width: 92%; margin: 60px auto 80px; }
         .cta-btn { 
             display: flex; align-items: center; justify-content: space-between; padding: 22px 28px; border-radius: 22px; 
@@ -95,12 +97,12 @@
 
     <div class="nav-section">
         <div class="nav-card" onclick="openModal('newModal')">
-            <img src="1.jpg" class="nav-img-main">
-            <div class="nav-info-bar"><h2>春季新品上市</h2><span>查看清單 ›</span></div>
+            <img src="911６首圖－藍.jpg" class="nav-img-main">
+            <div class="nav-info-bar"><h2>春季新品上市</h2><span>細緻蕾絲系列 ›</span></div>
         </div>
         <div class="nav-card" onclick="openModal('saleModal')">
-            <img src="2.jpg" class="nav-img-main">
-            <div class="nav-info-bar"><h2>門市精選折扣</h2><span>熱銷活動 ›</span></div>
+            <img src="依妹思-8080粉.jpeg" class="nav-img-main">
+            <div class="nav-info-bar"><h2>門市精選折扣</h2><span>熱銷 3 件 $1980 ›</span></div>
         </div>
     </div>
 
@@ -108,14 +110,13 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('newModal')">&times;</span>
             <div class="modal-body">
-                <div class="modal-title">春季新品上市</div>
+                <div class="modal-title">春季新品推薦</div>
                 <div class="visual-item-v2">
-                    <div class="item-header"><h4>蕾絲質感/大罩杯系列</h4><span class="price-badge-small">買一送一 / 79折</span></div>
+                    <div class="item-header"><h4>蕾絲質感 / 買一送一</h4></div>
                     <div class="image-scroll-container">
-                        <img src="1.jpg" class="scroll-img">
-                        <img src="combo_22_1.jpg" class="scroll-img">
+                        <img src="911６首圖－藍.jpg" class="scroll-img">
+                        <img src="9015-首圖-09.jpg" class="scroll-img">
                     </div>
-                    <p class="item-desc-text">法式刺繡工藝，專為亞洲女性打造的完美包覆感。</p>
                 </div>
             </div>
         </div>
@@ -128,33 +129,74 @@
                 <div class="modal-title">門市精選折扣</div>
                 
                 <div class="visual-item-v2">
-                    <div class="item-header"><h4>涼感/舒適無鋼圈</h4><span class="price-badge-small">3件 $1980</span></div>
-                    <div class="image-scroll-container">
-                        <img src="2.jpg" class="scroll-img">
-                        <img src="1.jpg" class="scroll-img">
-                        <img src="combo_22_1.jpg" class="scroll-img">
+                    <div class="item-header">
+                        <h4>舒適內衣</h4>
+                        <span class="price-badge-small">3件 $1980</span>
                     </div>
-                    <p class="item-desc-text">夏天必備瞬涼體感，多款顏色門市熱烈販售中。</p>
+                    <div class="image-scroll-container">
+                        <img src="依妹思-8080粉.jpeg" class="scroll-img">
+                        <img src="依妹思-8132紫.jpeg" class="scroll-img">
+                        <img src="9011牛仔＋抹茶首圖-3.jpg" class="scroll-img">
+                        <img src="9013首圖-20.jpg" class="scroll-img">
+                    </div>
+                    <p class="item-desc-text">經典熱銷款，打造日常最舒適的包覆感。</p>
                 </div>
 
                 <div class="visual-item-v2">
-                    <div class="item-header"><h4>舒適親膚小褲</h4><span class="price-badge-small">5件85折 / 10件8折</span></div>
-                    <div class="image-scroll-container">
-                        <img src="combo_22_2.jpg" class="scroll-img">
-                        <img src="IMG_4947.JPG" class="scroll-img">
-                        <img src="IMG_4948.JPG" class="scroll-img">
+                    <div class="item-header">
+                        <h4>蕾絲質感內衣</h4>
+                        <span class="price-badge-small">買一送一</span>
                     </div>
-                    <p class="item-desc-text">親膚莫代爾材質，透氣不悶熱，囤貨首選。</p>
+                    <div class="image-scroll-container">
+                        <img src="911６首圖－藍.jpg" class="scroll-img">
+                        <img src="9015-首圖-09.jpg" class="scroll-img">
+                        <img src="玳蕾綺6391紫.jpeg" class="scroll-img">
+                        <img src="玳蕾綺6383粉.jpeg" class="scroll-img">
+                        <img src="8125灰.jpeg" class="scroll-img">
+                    </div>
+                    <p class="item-desc-text">精緻刺繡工藝，展現優雅迷人的法式風情。</p>
                 </div>
 
                 <div class="visual-item-v2">
-                    <div class="item-header"><h4>法朵機能男褲</h4><span class="price-badge-small">3件 $799 起</span></div>
-                    <div class="image-scroll-container">
-                        <img src="combo_luxury_1.jpg" class="scroll-img">
-                        <img src="2.jpg" class="scroll-img">
+                    <div class="item-header">
+                        <h4>顯瘦大罩杯內衣</h4>
+                        <span class="price-badge-small">2件 79折</span>
                     </div>
-                    <p class="item-desc-text">速乾涼爽材質，給另一半最舒適的機能體驗。</p>
+                    <div class="image-scroll-container">
+                        <img src="9708黑.png" class="scroll-img">
+                        <img src="9708藍.png" class="scroll-img">
+                    </div>
+                    <p class="item-desc-text">穩定支撐，修飾胸線，讓豐滿女孩也自信迷人。</p>
                 </div>
+
+                <div class="visual-item-v2">
+                    <div class="item-header">
+                        <h4>舒適小褲</h4>
+                        <span class="price-badge-small">5件 85折 / 10件 8折</span>
+                    </div>
+                    <div class="image-scroll-container">
+                        <img src="21315-對色首圖-08.jpg" class="scroll-img">
+                        <img src="21322首圖-07.jpg" class="scroll-img">
+                        <img src="2101首圖－新色-14.jpg" class="scroll-img">
+                        <img src="2610首圖-26.jpg" class="scroll-img">
+                        <img src="3215首圖-靛青藍_2.jpg" class="scroll-img">
+                    </div>
+                    <p class="item-desc-text">親膚透氣材質，天天換穿好心情。</p>
+                </div>
+
+                <div class="visual-item-v2">
+                    <div class="item-header">
+                        <h4>法朵機能男褲</h4>
+                        <span class="price-badge-small">3件 $799 起</span>
+                    </div>
+                    <div class="image-scroll-container">
+                        <img src="7241首圖M-XL.jpg" class="scroll-img">
+                        <img src="7241首圖-科幻銀.jpg" class="scroll-img">
+                        <img src="7541-2.jpg" class="scroll-img">
+                    </div>
+                    <p class="item-desc-text">涼感機能布料，給另一半乾爽舒適的體感。</p>
+                </div>
+
             </div>
         </div>
     </div>
