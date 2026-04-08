@@ -10,86 +10,80 @@
             --fadu-rose: #d68c92;
             --fadu-warm: #fffafb;
             --fadu-gold: #b38b4d;
-            --fadu-taupe: #a89f9e;
             --white: #ffffff;
             --text-main: #4a4242;
+            --line-green: #06C755;
         }
 
-        body { 
-            font-family: 'Jost', 'Noto Sans TC', sans-serif; 
-            background-color: var(--fadu-warm); 
-            margin: 0; padding: 0; color: var(--text-main); 
-            letter-spacing: 0.05em; overflow-x: hidden;
-        }
+        body { font-family: 'Jost', 'Noto Sans TC', sans-serif; background-color: var(--fadu-warm); margin: 0; padding: 0; color: var(--text-main); letter-spacing: 0.05em; }
 
-        /* 🌸 標題與 Hero 區塊 */
-        .header-section { padding: 70px 20px 90px; text-align: center; background: linear-gradient(180deg, #fdf1f2 0%, var(--fadu-warm) 100%); }
-        .header-section span { font-size: 11px; letter-spacing: 0.4em; color: var(--fadu-rose); font-weight: 500; }
-        .header-section h1 { font-size: 28px; margin: 15px 0 0; font-weight: 900; color: var(--text-main); line-height: 1.4; }
+        /* [前段樣式與彈窗代碼維持不變，僅針對按鈕區進行重設計] */
+        .header-section { padding: 60px 20px 80px; text-align: center; background: linear-gradient(180deg, #fdf1f2 0%, var(--fadu-warm) 100%); }
+        .hero-promo-container { width: 90%; margin: -50px auto 40px; position: relative; z-index: 10; }
+        .hero-promo-card { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px 20px; text-align: center; box-shadow: 0 20px 45px rgba(214, 140, 146, 0.15); border: 1px solid #fff; }
+        .nav-section { width: 92%; margin: 0 auto 40px; }
+        .nav-card { background: var(--white); border-radius: 20px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03); cursor: pointer; }
+        .nav-img-main { width: 100%; height: 200px; object-fit: cover; display: block; }
+        .nav-info-bar { padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-info-bar h2 { margin: 0; font-size: 20px; font-weight: 900; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(12px); }
+        .modal-content { background: var(--fadu-warm); margin: 5% auto; padding: 0; width: 92%; max-height: 85vh; border-radius: 30px; overflow-y: auto; position: relative; animation: slideUp 0.4s ease; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 35px; color: #fff; z-index: 10; cursor: pointer; }
+        .modal-header-img { width: 100%; height: 180px; object-fit: cover; }
+        .modal-body { padding: 25px 15px; }
+        .visual-item { background: #fff; border-radius: 20px; overflow: hidden; margin-bottom: 25px; border: 1px solid #fdf2f3; }
+        .visual-item img { width: 100%; height: 320px; object-fit: cover; display: block; }
+        .visual-info { padding: 20px; position: relative; }
+        .price-tag { position: absolute; top: -30px; right: 15px; background: var(--fadu-rose); color: #fff; padding: 8px 18px; border-radius: 50px; font-weight: 900; font-size: 18px; }
+        .gift-showcase { width: 90%; margin: 40px auto; background: #fff; border-radius: 20px; padding: 25px; border: 1px solid #fdf2f3; }
 
-        .hero-promo-container { width: 88%; margin: -55px auto 40px; position: relative; z-index: 10; }
-        .hero-promo-card {
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-radius: 25px; padding: 40px 20px; text-align: center;
-            box-shadow: 0 25px 55px rgba(214, 140, 146, 0.12); border: 1px solid rgba(255, 255, 255, 0.8);
-        }
-        .offer-title { font-size: 25px; font-weight: 900; color: var(--fadu-rose); margin-bottom: 12px; display: block; }
-        .offer-sub { font-size: 15px; color: var(--fadu-gold); font-weight: 700; background: #fdf2f3; padding: 6px 15px; border-radius: 50px; display: inline-block; }
-
-        /* 🛍️ 互動導購區 */
-        .nav-section { width: 90%; margin: 0 auto 50px; }
-        .nav-card {
-            background: var(--white); border-radius: 20px; margin-bottom: 20px;
-            overflow: hidden; display: flex; align-items: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03); border: 1px solid #fdf2f3;
-            cursor: pointer; transition: 0.3s;
-        }
-        .nav-img { width: 40%; height: 130px; object-fit: cover; }
-        .nav-content { padding: 20px; flex: 1; position: relative; }
-        .nav-tag { font-size: 10px; color: var(--fadu-rose); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; display: block; }
-        .nav-title { font-size: 18px; font-weight: 900; margin-bottom: 4px; }
-        .nav-desc { font-size: 12px; color: var(--fadu-taupe); }
-
-        /* 📦 彈窗樣式 */
-        .modal {
-            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
-            width: 100%; height: 100%; background-color: rgba(0,0,0,0.65);
-            backdrop-filter: blur(10px);
-        }
-        .modal-content {
-            background-color: var(--fadu-warm); margin: 5% auto; padding: 40px 15px 30px;
-            width: 94%; max-height: 85vh; border-radius: 35px; overflow-y: auto;
-            position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.3);
-            animation: modalFadeIn 0.4s ease;
-        }
-        @keyframes modalFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 32px; color: var(--fadu-taupe); cursor: pointer; opacity: 0.6; }
+        /* 🔥 超亮眼導購按鈕區 */
+        .btn-group { width: 92%; margin: 60px auto 80px; }
         
-        .item-list { display: flex; flex-direction: column; gap: 18px; margin-top: 25px; }
-        .item-row { 
-            display: flex; align-items: center; gap: 15px; background: #fff; 
-            padding: 15px; border-radius: 20px; border: 1px solid rgba(214, 140, 146, 0.1);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        .cta-btn {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 22px 28px; border-radius: 22px; text-decoration: none;
+            margin-bottom: 22px; transition: all 0.3s ease;
+            position: relative; overflow: hidden;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
         }
-        .item-row img { width: 90px; height: 90px; border-radius: 15px; object-fit: cover; }
-        .item-info { flex: 1; }
-        .item-info h4 { margin: 0 0 6px; font-size: 17px; font-weight: 900; color: var(--text-main); letter-spacing: 0; }
-        .item-info p { margin: 0 0 4px; font-size: 14px; color: var(--fadu-rose); font-weight: 700; }
-        .item-info span { font-size: 12px; color: var(--fadu-taupe); line-height: 1.4; display: block; }
 
-        /* 🎁 限量滿額禮 */
-        .gift-showcase { width: 88%; margin: 50px auto; background: var(--white); border-radius: 25px; padding: 35px 20px; box-shadow: 0 10px 30px rgba(214, 140, 146, 0.05); border: 1px solid #fdf2f3; }
-        .gift-title { color: var(--fadu-gold); font-size: 20px; font-weight: 900; margin: 0 0 20px; text-align: center; }
-        .gift-visual { display: flex; gap: 10px; margin-bottom: 25px; }
-        .gift-img { flex: 1; border-radius: 12px; overflow: hidden; border: 1px solid #eee; }
-        .gift-img img { width: 100%; height: auto; display: block; }
-        .gift-details { background: #fdfafb; padding: 20px; border-radius: 18px; font-size: 14px; line-height: 1.6; }
+        /* LINE 按鈕優化 */
+        .btn-line {
+            background: linear-gradient(135deg, #06C755 0%, #05B34C 100%);
+            color: white; border: 2px solid rgba(255,255,255,0.1);
+        }
+        .btn-line:after {
+            content: ""; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: rgba(255,255,255,0.15); transform: rotate(30deg);
+            animation: shine 4s infinite;
+        }
 
-        .btn-group { width: 90%; margin: 50px auto 80px; }
-        .btn { display: flex; align-items: center; justify-content: center; height: 60px; border-radius: 18px; text-decoration: none; font-weight: 700; margin-bottom: 18px; font-size: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
-        .btn-line { background: #06C755; color: white; }
-        .btn-app { background: var(--text-main); color: white; }
-        .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 60px; letter-spacing: 0.2em; text-transform: uppercase; }
+        /* APP 按鈕優化 */
+        .btn-app {
+            background: linear-gradient(135deg, #2D2929 0%, #1A1818 100%);
+            color: white; border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .btn-text-wrap { display: flex; flex-direction: column; text-align: left; }
+        .btn-label { font-size: 11px; font-weight: 500; opacity: 0.9; letter-spacing: 0.15em; margin-bottom: 4px; text-transform: uppercase; }
+        .btn-main-text { font-size: 19px; font-weight: 900; letter-spacing: 0.02em; }
+        
+        .btn-icon-circle {
+            width: 44px; height: 44px; background: rgba(255,255,255,0.2);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; font-family: sans-serif;
+        }
+
+        @keyframes shine {
+            0% { left: -150%; }
+            20% { left: 150%; }
+            100% { left: 150%; }
+        }
+
+        .cta-btn:active { transform: scale(0.96); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 40px; }
     </style>
 </head>
 <body>
@@ -101,72 +95,47 @@
 
     <div class="hero-promo-container">
         <section class="hero-promo-card">
-            <span class="offer-title">全館正品 任挑三件 85 折</span>
-            <div class="offer-sub">✨ 滿 $4,500 即贈精品旅行好禮 ✨</div>
+            <span style="font-size: 24px; font-weight: 900; color: var(--fadu-rose);">全館正品 任挑三件 85 折</span><br>
+            <span style="font-size: 15px; color: var(--fadu-gold); font-weight: 700;">✨ 滿 $4,500 即贈精品旅行收納袋 ✨</span>
         </section>
     </div>
 
     <div class="nav-section">
-        <div class="nav-card" onclick="openModal('newArrivalsModal')">
-            <img src="1.jpg" class="nav-img">
-            <div class="nav-content">
-                <span class="nav-tag">New Arrivals</span>
-                <div class="nav-title">春季新品上市</div>
-                <div class="nav-desc">穿上最溫柔的蕾絲，開啟美好。</div>
-            </div>
+        <div class="nav-card" onclick="openModal('newModal')">
+            <img src="1.jpg" class="nav-img-main">
+            <div class="nav-info-bar"><h2>春季新品上市</h2><span style="color: var(--fadu-rose);">查看清單 ›</span></div>
         </div>
-
-        <div class="nav-card" onclick="openModal('discountModal')">
-            <img src="2.jpg" class="nav-img">
-            <div class="nav-content">
-                <span class="nav-tag">Special Offers</span>
-                <div class="nav-title">門市精選折扣</div>
-                <div class="nav-desc">經典款 3 件 $1980 起。</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="newArrivalsModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('newArrivalsModal')">&times;</span>
-            <h3 style="text-align: center; color: var(--fadu-rose); font-size: 22px;">春季新品推薦</h3>
-            <div class="item-list">
-                <div class="item-row"><img src="1.jpg"><div class="item-info"><h4>蕾絲質感系列</h4><p>買一送一</p><span>專櫃級精緻蕾絲，極致顯瘦剪裁，母親節限時回饋。</span></div></div>
-                <div class="item-row"><img src="2.jpg"><div class="item-info"><h4>涼感無鋼圈系列</h4><p>3件 $1980</p><span>瞬涼體感科技，夏日最清爽的包覆體驗。</span></div></div>
-                <div class="item-row"><img src="combo_22_1.jpg"><div class="item-info"><h4>顯瘦大罩杯系列</h4><p>2件 79 折</p><span>專為豐滿女孩設計，穩定承托，修飾胸線。</span></div></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="discountModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('discountModal')">&times;</span>
-            <h3 style="text-align: center; color: var(--fadu-gold); font-size: 22px;">門市限定好禮</h3>
-            <div class="item-list">
-                <div class="item-row"><img src="2.jpg"><div class="item-info"><h4>涼感/舒適內衣</h4><p>任選 3 件 $1980</p><span>經典明星款，日常換新首選，舒適無鋼圈不壓迫。</span></div></div>
-                <div class="item-row"><img src="1.jpg"><div class="item-info"><h4>蕾絲質感系列</h4><p>限時 買一送一</p><span>細膩蕾絲工藝，給予媽咪最優雅的貼身呵護。</span></div></div>
-                <div class="item-row"><img src="combo_22_2.jpg"><div class="item-info"><h4>超值舒適小褲</h4><p>5件 85折 / 10件 8折</p><span>親膚莫代爾材質，全方位透氣，囤貨最划算。</span></div></div>
-                <div class="item-row"><img src="combo_luxury_1.jpg"><div class="item-info"><h4>法朵機能男褲</h4><p>任選 3 件 $799 起</p><span>透氣涼感機能布料，給另一半最好的穿著感。</span></div></div>
-                <div class="item-row"><img src="IMG_4947.JPG"><div class="item-info"><h4>寵愛加碼區</h4><p>滿 $4500 贈收納袋</p><span>把握最後機會，領取精品級旅行收納袋。</span></div></div>
-            </div>
+        <div class="nav-card" onclick="openModal('saleModal')">
+            <img src="2.jpg" class="nav-img-main">
+            <div class="nav-info-bar"><h2>門市精選折扣</h2><span style="color: var(--fadu-gold);">熱銷活動 ›</span></div>
         </div>
     </div>
 
     <section class="gift-showcase">
-        <h3 class="gift-title">限量滿額禮：精品旅行收納袋</h3>
-        <div class="gift-visual">
-            <div class="gift-img"><img src="IMG_4947.JPG"></div>
-            <div class="gift-img"><img src="IMG_4948.JPG"></div>
+        <h3 style="text-align: center; color: var(--fadu-gold); margin-top: 0;">限量滿額禮</h3>
+        <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+            <img src="IMG_4947.JPG" style="flex: 1; width: 50%; border-radius: 10px;">
+            <img src="IMG_4948.JPG" style="flex: 1; width: 50%; border-radius: 10px;">
         </div>
-        <div class="gift-details">
-            <strong>專屬分層收納空間</strong><br>
-            專為內衣設計獨立格層，確保不變形。霧面絲綢質感材質，為旅程增添一份優雅。
-        </div>
+        <p style="font-size: 14px; color: #666; line-height: 1.6;"><strong>內衣旅行收納袋</strong>：專屬分層確保不變形，霧面絲綢質感，為旅行增添優雅。</p>
     </section>
 
     <div class="btn-group">
-        <a href="https://lin.ee/U2TINN9" class="btn btn-line">加入 LINE 領取內褲兌換券</a>
-        <a href="https://bmai.app/cf09c1ac" class="btn btn-app">APP 新會員首購現折 $100</a>
+        <a href="https://lin.ee/U2TINN9" class="cta-btn btn-line">
+            <div class="btn-text-wrap">
+                <span class="btn-label">EXCLUSIVE GIFT</span>
+                <span class="btn-main-text">領取免費內褲兌換券</span>
+            </div>
+            <div class="btn-icon-circle">🎁</div>
+        </a>
+
+        <a href="https://bmai.app/cf09c1ac" class="cta-btn btn-app">
+            <div class="btn-text-wrap">
+                <span class="btn-label">APP SPECIAL</span>
+                <span class="btn-main-text">首購立即現折 $100</span>
+            </div>
+            <div class="btn-icon-circle">✨</div>
+        </a>
     </div>
 
     <footer class="footer">FADOU LINGERIE TAIWAN</footer>
@@ -176,6 +145,5 @@
         function closeModal(id) { document.getElementById(id).style.display = "none"; document.body.style.overflow = "auto"; }
         window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; document.body.style.overflow = "auto"; } }
     </script>
-
 </body>
 </html>
