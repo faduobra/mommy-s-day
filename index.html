@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>法朵 FADOU | 母親節寵愛攻略</title>
+    <title>法朵 FADOU | 2026母親節寵愛攻略</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --fadu-pink: #f8d7da; /* 法朵溫柔粉 */
-            --fadu-dark-pink: #e4a1a7; /* 重點粉 */
-            --fadu-text: #5a4a4a; /* 深褐文字色 */
+            --fadu-pink: #fde2e4; /* 法朵淡粉 */
+            --fadu-dark-pink: #d68c92; /* 重點深粉 */
+            --fadu-gold: #c5a059; /* 滿額贈亮點金 */
+            --fadu-text: #4a4a4a;
             --white: #ffffff;
         }
 
         body {
             font-family: 'Noto Sans TC', sans-serif;
-            background-color: #fff9f9;
+            background-color: #fffafb;
             color: var(--fadu-text);
             margin: 0;
             padding: 0;
@@ -27,112 +28,112 @@
         /* 頂部橫幅 */
         .header {
             width: 100%;
-            background: linear-gradient(135deg, var(--fadu-pink), var(--fadu-dark-pink));
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #fce4ec, #f8d7da);
+            padding: 45px 20px;
             text-align: center;
-            color: var(--white);
+            border-bottom: 2px solid var(--fadu-pink);
         }
 
-        .header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
-        .header p { margin: 10px 0 0; font-weight: 300; opacity: 0.9; }
+        .header h1 { margin: 0; font-size: 26px; color: var(--fadu-dark-pink); letter-spacing: 1px; }
+        .header p { margin: 8px 0 0; font-weight: 300; color: #888; }
 
-        /* 活動快報區 */
-        .promo-bar {
+        /* 核心活動區 */
+        .promo-hero {
             width: 90%;
             background: var(--white);
-            border-radius: 15px;
-            margin: -20px auto 20px;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            display: flex;
-            justify-content: space-around;
+            border-radius: 20px;
+            margin: -25px auto 25px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(214, 140, 146, 0.15);
             text-align: center;
-        }
-
-        .promo-item span { display: block; font-size: 12px; color: #999; }
-        .promo-item strong { color: var(--fadu-dark-pink); font-size: 16px; }
-
-        /* 組合推薦區 */
-        .section-title { font-size: 18px; margin: 20px 0 10px; border-left: 4px solid var(--fadu-dark-pink); padding-left: 10px; align-self: flex-start; margin-left: 5%; }
-
-        .card-container { width: 90%; margin-bottom: 20px; }
-        .card {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 15px;
             border: 1px solid var(--fadu-pink);
         }
-        .card img { width: 100%; height: auto; display: block; background: #eee; }
-        .card-body { padding: 15px; }
-        .card-tag { display: inline-block; background: var(--fadu-pink); color: var(--fadu-dark-pink); font-size: 12px; padding: 2px 8px; border-radius: 4px; margin-bottom: 5px; }
-        .card-title { font-weight: 700; font-size: 16px; margin: 5px 0; }
-        .card-text { font-size: 14px; color: #777; line-height: 1.5; }
+
+        .promo-hero .discount { font-size: 22px; font-weight: 700; color: var(--fadu-dark-pink); margin-bottom: 5px; }
+        .promo-hero .gift { font-size: 15px; color: var(--fadu-gold); font-weight: 500; }
+
+        /* 組合卡片 */
+        .section-title { font-size: 18px; margin: 15px 0 15px; align-self: flex-start; margin-left: 5%; color: var(--fadu-dark-pink); font-weight: 700; }
+        .card-container { width: 90%; }
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            border: 1px solid #f1f1f1;
+        }
+        .card img { width: 100%; height: auto; display: block; }
+        .card-body { padding: 18px; }
+        .card-tag { display: inline-block; background: var(--fadu-pink); color: var(--fadu-dark-pink); font-size: 11px; padding: 3px 10px; border-radius: 50px; margin-bottom: 8px; font-weight: 700; }
+        .card-title { font-weight: 700; font-size: 17px; margin-bottom: 8px; }
+        .card-text { font-size: 14px; color: #666; line-height: 1.6; }
+        .highlight { color: var(--fadu-dark-pink); font-weight: 700; }
 
         /* 按鈕區 */
-        .btn-group { width: 90%; margin: 20px 0; }
+        .btn-group { width: 90%; margin: 25px 0; }
         .btn {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 30px;
-            text-align: center;
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 12px;
             text-decoration: none;
             font-weight: 700;
-            transition: 0.3s;
+            font-size: 16px;
         }
-        .btn-line { background-color: #06C755; color: white; } /* LINE 綠 */
-        .btn-app { background-color: var(--fadu-dark-pink); color: white; }
+        .btn-line { background-color: #06C755; color: white; }
+        .btn-app { background-color: #5a4a4a; color: white; }
 
-        /* 頁尾 */
-        .footer { padding: 30px; text-align: center; font-size: 12px; color: #bbb; line-height: 1.8; }
+        .footer { padding: 40px; text-align: center; font-size: 12px; color: #ccc; }
     </style>
 </head>
 <body>
 
     <div class="header">
-        <h1>🌷 法朵母親節寵愛攻略</h1>
-        <p>為妳挑選最貼心的舒適搭配</p>
+        <h1>🌷 法朵母親節 ‧ 寵愛驚喜</h1>
+        <p>讓媽咪由內而外散發優雅光采</p>
     </div>
 
-    <div class="promo-bar">
-        <div class="promo-item"><span>正品折扣</span><strong>2件9折 / 3件85折</strong></div>
-        <div class="promo-item"><span>滿額贈</span><strong>滿$4500送收納包</strong></div>
+    <div class="promo-hero">
+        <div class="discount">全館任選 3 件正品 85 折</div>
+        <div class="gift">✨ 滿 $4,500 贈「內衣旅行收納袋」✨</div>
     </div>
 
-    <h2 class="section-title">更衣間推薦組合</h2>
+    <h2 class="section-title">更衣間 ‧ 快速攻略</h2>
 
     <div class="card-container">
         <div class="card">
-            <img src="https://via.placeholder.com/600x400?text=2+Bras+4+Panties" alt="2內衣+4內褲">
+            <img src="https://via.placeholder.com/600x350?text=3+Items+85+Percent+OFF" alt="任選3件85折">
             <div class="card-body">
-                <div class="card-tag">人氣首選</div>
-                <div class="card-title">【懶人包】2 件內衣 + 4 件內褲</div>
-                <div class="card-text">日常替換最安心，正品享 9 折優惠！<br><strong>截圖此畫面回櫃檯結帳</strong></div>
+                <div class="card-tag">最高 CP 值</div>
+                <div class="card-title">【任挑任選】自由配 3 件</div>
+                <div class="card-text">不限款式！內衣、內褲任選 3 件即享 <span class="highlight">85 折</span>。<br>試穿喜歡的，通通帶回家！</div>
             </div>
         </div>
 
         <div class="card">
-            <img src="https://via.placeholder.com/600x400?text=3+Sets+Bonus" alt="直衝滿額贈">
+            <img src="https://via.placeholder.com/600x350?text=Special+Gift+Bag" alt="滿額贈專區">
             <div class="card-body">
-                <div class="card-tag">最划算攻略</div>
-                <div class="card-title">【直衝滿額贈】3 套成套內衣褲 + 加購品</div>
-                <div class="card-text">直接帶走 85 折，再送「質感旅行收納包」乙份！</div>
+                <div class="card-tag">滿額限定</div>
+                <div class="card-title">【滿額好禮】內衣旅行收納袋</div>
+                <div class="card-text">消費滿 $4,500 即可獲得。<br>建議搭配：<span class="highlight">3 套成套內衣褲 + 加購區小物</span>，輕鬆達標領贈品！</div>
             </div>
         </div>
     </div>
 
-    <h2 class="section-title">數位領券區</h2>
+    <h2 class="section-title">專屬加碼優惠</h2>
     
     <div class="btn-group">
-        <a href="妳的LINE連結" class="btn btn-line">💬 加入 LINE 領內褲兌換券</a>
-        <a href="妳的APP下載連結" class="btn btn-app">🎁 新會員下載 APP 折 $100</a>
+        <a href="#" class="btn btn-line">💬 加入 LINE 領內褲兌換券</a>
+        <a href="#" class="btn btn-app">🎁 新加入會員 滿 $1000 現折 $100</a>
     </div>
 
     <div class="footer">
-        法朵。台灣品牌。<br>
-        <a href="https://www.faduolingerie.com.tw/" style="color:#bbb;">官方網站</a><br>
+        法朵 FADOU ‧ 台灣內衣品牌<br>
+        Tainan | 質感生活從細節開始<br>
         © 2026 FADOU Lingerie
     </div>
 
