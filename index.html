@@ -3,119 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>法朵 FADOU | 母親節寵愛攻略</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>法朵 FADOU | 母親節寵愛企劃</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --fadu-main: #d68c92; /* 深粉色 */
-            --fadu-light: #fdf2f3;
+            --fadu-rose: #d68c92;
             --fadu-gold: #b38b4d;
+            --fadu-cream: #fffafb;
             --white: #ffffff;
         }
 
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #fffafb; color: #333; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Noto Sans TC', sans-serif; 
+            background-color: var(--fadu-cream); 
+            color: #443e3e; 
+            margin: 0; 
+            padding: 0;
+            background-image: radial-gradient(#fde2e4 0.5px, transparent 0.5px);
+            background-size: 20px 20px; /* 細緻點狀背景增加層次 */
+        }
 
-        /* 🚀 強效主活動區：超顯眼深粉色塊 */
-        .hero-promo {
-            background: linear-gradient(135deg, #e4a1a7 0%, #d68c92 100%);
-            padding: 45px 20px;
+        /* 🌸 標題區域：優雅母親節主題 */
+        .mom-header {
+            padding: 60px 20px 80px;
             text-align: center;
-            color: var(--white);
-            box-shadow: 0 4px 20px rgba(214, 140, 146, 0.4);
-            border-bottom-left-radius: 30px;
-            border-bottom-right-radius: 30px;
+            background: linear-gradient(to bottom, #fce4ec, var(--fadu-cream));
         }
-        .hero-promo h1 { margin: 0; font-size: 32px; font-weight: 900; letter-spacing: 2px; }
-        .hero-promo .gift-tag { 
-            display: inline-block; background: rgba(255,255,255,0.2); 
-            padding: 8px 20px; border-radius: 50px; margin-top: 15px;
-            font-weight: 700; font-size: 16px; border: 1.5px dashed var(--white);
+        .mom-header .sub-title { 
+            font-size: 14px; 
+            letter-spacing: 4px; 
+            color: var(--fadu-rose); 
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .mom-header h1 { 
+            font-family: 'Noto Serif TC', serif; 
+            font-size: 32px; 
+            margin: 0; 
+            color: #5a4a4a;
+            line-height: 1.2;
         }
 
-        /* 🛍️ 三大組合卡片排版 */
-        .section-title { text-align: center; font-size: 18px; font-weight: 700; margin: 35px 0 20px; color: var(--fadu-main); }
-        .card-flow { width: 92%; margin: 0 auto; }
-        .combo-card { background: var(--white); border-radius: 18px; overflow: hidden; margin-bottom: 30px; border: 1px solid #eee; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-        .combo-card img { width: 100%; height: auto; display: block; }
-        .combo-info { padding: 20px; }
-        .badge { background: var(--fadu-main); color: white; font-size: 11px; padding: 3px 10px; border-radius: 4px; font-weight: 700; }
-        .combo-info h3 { margin: 10px 0 5px; font-size: 19px; font-weight: 700; }
-        .combo-info p { margin: 0; font-size: 14px; color: #666; }
-        .highlight { color: var(--fadu-main); font-weight: 900; }
-
-        /* 🎁 滿額禮雙圖並排展示 (IMG_4947 & 4948) */
-        .gift-showcase { display: flex; gap: 10px; padding: 0 4%; margin-bottom: 20px; }
-        .gift-img-box { flex: 1; background: white; border-radius: 12px; overflow: hidden; border: 1px solid #f0f0f0; }
-        .gift-img-box img { width: 100%; height: auto; display: block; object-fit: cover; }
-        .gift-desc { text-align: center; font-size: 14px; color: var(--fadu-gold); font-weight: 700; margin-bottom: 30px; }
-
-        /* 🔗 底部按鈕區 */
-        .btn-group { width: 92%; margin: 0 auto 50px; }
-        .btn { 
-            display: flex; align-items: center; justify-content: center; 
-            width: 100%; height: 58px; border-radius: 15px; 
-            text-decoration: none; font-weight: 700; font-size: 16px; margin-bottom: 12px;
+        /* 🚀 強效主活動：精品禮物卡視覺 */
+        .main-promo-card {
+            width: 88%;
+            margin: -40px auto 30px;
+            background: var(--white);
+            border-radius: 2px; /* 方正簡約感 */
+            padding: 30px 15px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(214, 140, 146, 0.15);
+            border: 1px solid #f1f1f1;
+            position: relative;
         }
-        .btn-line { background-color: #06C755; color: white; }
-        .btn-app { background-color: #333; color: white; }
+        .main-promo-card::before {
+            content: "";
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid var(--fadu-rose);
+            opacity: 0.3;
+            pointer-events: none;
+        }
+        .offer-title { 
+            font-family: 'Noto Serif TC', serif;
+            font-size: 28px; 
+            color: var(--fadu-rose); 
+            display: block;
+            margin-bottom: 15px;
+        }
+        .offer-gift {
+            background: #fdf2f3;
+            color: var(--fadu-gold);
+            padding: 6px 15px;
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
 
-        .footer { text-align: center; font-size: 12px; color: #bbb; padding-bottom: 40px; }
+        /* 🛍️ 三大組合：雜誌內頁排版 */
+        .section-label {
+            text-align: center;
+            font-family: 'Noto Serif TC', serif;
+            font-size: 20px;
+            margin: 40px 0 20px;
+            color: #5a4a4a;
+        }
+        .combo-section { width: 90%; margin: 0 auto; }
+        .combo-item {
+            margin-bottom: 40px;
+            background: var(--white);
+            padding-bottom: 20px;
+        }
+        .combo-item img { width: 100%; height: auto; border-radius: 0; }
+        .combo-text { padding: 20px 10px 0; text-align: left; }
+        .combo-tag { font-size: 11px; color: var(--fadu-rose); font-weight: 700; letter-spacing: 1px; margin-bottom: 5px; display: block; }
+        .combo-name { font-family: 'Noto Serif TC', serif; font-size: 20px; margin-bottom: 10px; }
+        .combo-desc { font-size: 13px; color: #888; line-height: 1.8; }
+        .accent { color: var(--fadu-rose); font-weight: 700; border-bottom: 1px solid var(--fadu-rose); }
+
+        /* 🎁 滿額禮：對稱展示區塊 */
+        .gift-container {
+            display: flex;
+            padding: 0 5%;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .gift-box { flex: 1; overflow: hidden; border: 1px solid #f1f1f1; }
+        .gift-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .gift-note { text-align: center; font-size: 12px; color: var(--fadu-gold); letter-spacing: 2px; margin-bottom: 40px; }
+
+        /* 🔗 按鈕設計：圓潤優雅 */
+        .btn-container { width: 85%; margin: 0 auto 60px; }
+        .fadu-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; height: 54px; margin-bottom: 15px;
+            text-decoration: none; font-size: 15px; font-weight: 700; letter-spacing: 1px;
+            border-radius: 40px; transition: 0.3s;
+        }
+        .btn-line { background: #06C755; color: white; }
+        .btn-app { background: #5a4a4a; color: white; box-shadow: 0 10px 20px rgba(90, 74, 74, 0.2); }
+
+        .footer { text-align: center; font-size: 11px; color: #bbb; padding: 40px 0; letter-spacing: 1px; }
     </style>
 </head>
 <body>
 
-    <div class="hero-promo">
-        <h1>全館正品 3 件 85 折</h1>
-        <div class="gift-tag">✨ 滿 $4500 贈旅行收納袋 ✨</div>
-    </div>
+    <header class="mom-header">
+        <span class="sub-title">FADOU MOTHER'S DAY</span>
+        <h1>致 ‧ 溫柔的妳<br>母親節寵愛企劃</h1>
+    </header>
 
-    <div class="section-title">✨ 門市限定推薦組合 ✨</div>
+    <section class="main-promo-card">
+        <span class="offer-title">全館正品 3 件 85 折</span>
+        <span class="offer-gift">✨ 滿 $4500 贈旅行收納袋 ✨</span>
+    </section>
 
-    <div class="card-flow">
-        <div class="combo-card">
-            <img src="combo_22.jpg" alt="2內2褲">
-            <div class="combo-info">
-                <span class="badge">門市熱銷</span>
-                <h3>【舒適替換組】2 內衣 + 2 內褲</h3>
-                <p>正品任選滿 3 件即享 <span class="highlight">85 折</span>！最適合包色囤貨。</p>
+    <h2 class="section-label">專屬推薦組合</h2>
+
+    <div class="combo-section">
+        <div class="combo-item">
+            <img src="combo_22.jpg" alt="舒適替換">
+            <div class="combo-text">
+                <span class="combo-tag">BEST SELLER</span>
+                <div class="combo-name">舒適替換組合 (2內2褲)</div>
+                <div class="combo-desc">正品任選滿 3 件享 <span class="accent">85 折</span>。為忙碌生活準備一份最貼心的觸感。</div>
             </div>
         </div>
 
-        <div class="combo-card">
-            <img src="combo_33.jpg" alt="3內3褲">
-            <div class="combo-info">
-                <span class="badge">優雅首選</span>
-                <h3>【質感煥新組】3 內衣 + 3 內褲</h3>
-                <p>全數正品 <span class="highlight">85 折</span>！內外整套換新，天天好心情。</p>
-            </div>
-        </div>
-
-        <div class="combo-card">
-            <img src="combo_full.jpg" alt="豪華滿額組合">
-            <div class="combo-info">
-                <span class="badge">贈品攻略</span>
-                <h3>【豪華寵愛組】目標滿 $4,500</h3>
-                <p>建議搭配：<span class="highlight">3 套成套 + 加購品</span>。折扣贈品一次滿足！</p>
+        <div class="combo-item">
+            <img src="combo_33.jpg" alt="優雅煥新">
+            <div class="combo-text">
+                <span class="combo-tag">ELEGANT CHOICE</span>
+                <div class="combo-name">優雅煥新組合 (3內3褲)</div>
+                <div class="combo-desc">全數正品 <span class="accent">85 折</span>。從內衣開始，讓優雅成為媽咪的日常。</div>
             </div>
         </div>
     </div>
 
-    <div class="section-title">🎁 限量滿額禮展示</div>
+    <h2 class="section-label">限量滿額禮遇</h2>
 
-    <div class="gift-showcase">
-        <div class="gift-img-box"><img src="IMG_4947.JPG" alt="收納袋細節1"></div>
-        <div class="gift-img-box"><img src="IMG_4948.JPG" alt="收納袋細節2"></div>
+    <div class="gift-container">
+        <div class="gift-box"><img src="IMG_4947.JPG" alt="禮物細節"></div>
+        <div class="gift-box"><img src="IMG_4948.JPG" alt="禮物細節"></div>
     </div>
-    <div class="gift-desc">內衣旅行收納袋 (限量贈送)</div>
+    <div class="gift-note">－ 質感內衣旅行收納袋 －</div>
 
-    <div class="btn-group">
-        <a href="https://lin.ee/U2TINN9" class="btn btn-line">💬 加入 LINE 領內褲兌換券</a>
-        <a href="https://bmai.app/cf09c1ac" class="btn btn-app">🎁 新會員滿 1000 折 100</a>
+    <div class="btn-container">
+        <a href="https://lin.ee/U2TINN9" class="fadu-btn btn-line">加入 LINE 領取兌換券</a>
+        <a href="https://bmai.app/cf09c1ac" class="fadu-btn btn-app">下載 APP 領取 $100 折價券</a>
     </div>
 
-    <div class="footer">
-        法朵 FADOU ‧ 台灣內衣品牌<br>© 2026 FADOU Lingerie
-    </div>
+    <footer class="footer">
+        法朵 FADOU ‧ 台灣內衣品牌<br>
+        Pure Comfort, Infinite Elegance.
+    </footer>
 
 </body>
 </html>
