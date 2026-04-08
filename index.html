@@ -38,7 +38,7 @@
         .section-tag-wrapper { margin-bottom: 15px; }
         .section-tag { background: var(--fadu-gold); color: white; padding: 6px 24px; border-radius: 50px; font-size: 14px; font-weight: 900; letter-spacing: 0.1em; box-shadow: 0 4px 10px rgba(179, 139, 77, 0.3); }
         .btn-flex-row { display: flex; gap: 12px; justify-content: center; padding: 0 5px; }
-        .cta-btn-small { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 10px; border-radius: 22px; text-decoration: none; box-shadow: 0 12px 20px rgba(0,0,0,0.08); transition: transform 0.2s; }
+        .cta-btn-small { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px 10px; border-radius: 22px; text-decoration: none; box-shadow: 0 12px 20px rgba(0,0,0,0.08); transition: 0.2s; }
         .btn-line-row { background: linear-gradient(135deg, #06C755 0%, #05B34C 100%); color: white; }
         .btn-app-row { background: var(--fadu-brown); color: white; }
         .btn-sub-small { font-size: 10px; font-weight: 700; opacity: 0.85; }
@@ -53,7 +53,7 @@
         .nav-info-bar span { color: var(--fadu-rose); font-size: 12px; font-weight: 700; margin-top: 4px; display: block; }
         .view-more-tag { position: absolute; right: 15px; bottom: 12px; font-size: 11px; background: var(--fadu-warm); color: var(--fadu-gold); padding: 2px 10px; border-radius: 50px; border: 1px solid var(--fadu-gold); font-weight: 700; }
 
-        /* ✅ 品牌承諾區塊 (兩兩一排) */
+        /* ✅ 品牌承諾區塊 */
         .brand-promise { width: 92%; margin: 0 auto 40px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
         .promise-item { background: #fff; border: 1px solid #fdf2f3; padding: 15px 10px; border-radius: 18px; width: calc(50% - 5px); text-align: center; box-sizing: border-box; }
         .promise-icon { font-size: 18px; margin-bottom: 5px; display: block; }
@@ -74,7 +74,7 @@
         .btn-web { background: white; color: var(--text-main); border: 1px solid #eee; }
         .btn-store { background: var(--fadu-rose); color: white; }
 
-        /* 📦 彈窗樣式 (全呈現版) */
+        /* 📦 彈窗樣式 */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); }
         .modal-content { background: var(--fadu-warm); margin: 5% auto; padding: 0; width: 92%; max-height: 85vh; border-radius: 30px; overflow-y: auto; position: relative; }
         .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; color: var(--fadu-taupe); z-index: 100; cursor: pointer; }
@@ -84,6 +84,7 @@
         .item-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
         .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .grid-img { width: 100%; aspect-ratio: 1/1; border-radius: 12px; object-fit: cover; }
+        .price-badge-small { background: var(--fadu-rose); color: #fff; padding: 3px 8px; border-radius: 5px; font-size: 12px; font-weight: 700; }
 
         .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 40px; }
     </style>
@@ -176,21 +177,50 @@
         <a href="https://www.faduobra.com/v2/Shop/StoreList/40183" class="link-btn btn-store">📍 查詢全台實體門市位置</a>
     </div>
 
-    <footer class="footer">FADOU LINGERIE TAIWAN</footer>
-
     <div id="saleModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('saleModal')">&times;</span>
             <div class="modal-body">
                 <div class="modal-title">門市精選折扣</div>
+                
                 <div class="visual-item-full">
-                    <div class="item-header"><h4>舒適內衣</h4><span class="price-badge-small" style="background:var(--fadu-rose); color:#fff; padding:3px 8px; border-radius:5px; font-size:12px;">3件 $1980</span></div>
+                    <div class="item-header"><h4>舒適內衣</h4><span class="price-badge-small">3件 $1980</span></div>
                     <div class="image-grid">
                         <img src="依妹思-8080粉.jpeg" class="grid-img"><img src="依妹思-8132紫.jpeg" class="grid-img">
                         <img src="9011牛仔＋抹茶首圖-3.jpg" class="grid-img"><img src="9013首圖-20.jpg" class="grid-img">
                     </div>
                 </div>
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>質感機能內衣</h4><span class="price-badge-small">買一送一</span></div>
+                    <div class="image-grid">
+                        <img src="911６首圖－藍.jpg" class="grid-img"><img src="9015-首圖-09.jpg" class="grid-img">
+                        <img src="玳蕾綺6391紫.jpeg" class="grid-img"><img src="玳蕾綺6383粉.jpeg" class="grid-img">
+                    </div>
                 </div>
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>顯瘦大罩杯內衣</h4><span class="price-badge-small">2件 79折</span></div>
+                    <div class="image-grid">
+                        <img src="9708黑.png" class="grid-img"><img src="9708藍.png" class="grid-img">
+                    </div>
+                </div>
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>舒適小褲</h4><span class="price-badge-small">10件 8折</span></div>
+                    <div class="image-grid">
+                        <img src="21315-對色首圖-08.jpg" class="grid-img"><img src="21322首圖-07.jpg" class="grid-img">
+                        <img src="2101首圖－新色-14.jpg" class="grid-img"><img src="2610首圖-26.jpg" class="grid-img">
+                    </div>
+                </div>
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>法朵機能男褲</h4><span class="price-badge-small">3件 $799 起</span></div>
+                    <div class="image-grid">
+                        <img src="7241首圖M-XL.jpg" class="grid-img"><img src="7241首圖-科幻銀.jpg" class="grid-img"><img src="7541-2.jpg" class="grid-img">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -208,6 +238,8 @@
             </div>
         </div>
     </div>
+
+    <footer class="footer">FADOU LINGERIE TAIWAN</footer>
 
     <script>
         function openModal(id) { document.getElementById(id).style.display = "block"; document.body.style.overflow = "hidden"; }
