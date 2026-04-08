@@ -49,30 +49,35 @@
         .nav-tag { font-size: 10px; color: var(--fadu-rose); font-weight: 700; text-transform: uppercase; margin-bottom: 4px; display: block; }
         .nav-title { font-size: 18px; font-weight: 900; margin-bottom: 4px; }
         .nav-desc { font-size: 12px; color: var(--fadu-taupe); }
-        .nav-arrow { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #eee; font-size: 20px; }
 
-        /* 📦 彈窗樣式 (Modals) */
+        /* 📦 彈窗樣式 */
         .modal {
             display: none; position: fixed; z-index: 1000; left: 0; top: 0;
-            width: 100%; height: 100%; background-color: rgba(0,0,0,0.6);
-            backdrop-filter: blur(8px);
+            width: 100%; height: 100%; background-color: rgba(0,0,0,0.65);
+            backdrop-filter: blur(10px);
         }
         .modal-content {
-            background-color: var(--fadu-warm); margin: 10% auto; padding: 30px 20px;
-            width: 85%; max-height: 70vh; border-radius: 30px; overflow-y: auto;
-            position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            background-color: var(--fadu-warm); margin: 5% auto; padding: 40px 15px 30px;
+            width: 94%; max-height: 85vh; border-radius: 35px; overflow-y: auto;
+            position: relative; box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+            animation: modalFadeIn 0.4s ease;
         }
-        .close-modal { position: absolute; top: 20px; right: 20px; font-size: 24px; font-weight: bold; color: var(--fadu-taupe); cursor: pointer; }
+        @keyframes modalFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 32px; color: var(--fadu-taupe); cursor: pointer; opacity: 0.6; }
         
-        /* 彈窗內的列表排版 */
-        .item-list { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
-        .item-row { display: flex; align-items: center; gap: 15px; background: #fff; padding: 12px; border-radius: 15px; border: 1px solid #fdf2f3; }
-        .item-row img { width: 70px; height: 70px; border-radius: 10px; object-fit: cover; }
-        .item-info h4 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--text-main); }
-        .item-info p { margin: 0; font-size: 12px; color: var(--fadu-rose); font-weight: 500; }
-        .item-info span { font-size: 11px; color: var(--fadu-taupe); }
+        .item-list { display: flex; flex-direction: column; gap: 18px; margin-top: 25px; }
+        .item-row { 
+            display: flex; align-items: center; gap: 15px; background: #fff; 
+            padding: 15px; border-radius: 20px; border: 1px solid rgba(214, 140, 146, 0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+        .item-row img { width: 90px; height: 90px; border-radius: 15px; object-fit: cover; }
+        .item-info { flex: 1; }
+        .item-info h4 { margin: 0 0 6px; font-size: 17px; font-weight: 900; color: var(--text-main); letter-spacing: 0; }
+        .item-info p { margin: 0 0 4px; font-size: 14px; color: var(--fadu-rose); font-weight: 700; }
+        .item-info span { font-size: 12px; color: var(--fadu-taupe); line-height: 1.4; display: block; }
 
-        /* 🎁 限量滿額禮 (維持精品感) */
+        /* 🎁 限量滿額禮 */
         .gift-showcase { width: 88%; margin: 50px auto; background: var(--white); border-radius: 25px; padding: 35px 20px; box-shadow: 0 10px 30px rgba(214, 140, 146, 0.05); border: 1px solid #fdf2f3; }
         .gift-title { color: var(--fadu-gold); font-size: 20px; font-weight: 900; margin: 0 0 20px; text-align: center; }
         .gift-visual { display: flex; gap: 10px; margin-bottom: 25px; }
@@ -80,7 +85,6 @@
         .gift-img img { width: 100%; height: auto; display: block; }
         .gift-details { background: #fdfafb; padding: 20px; border-radius: 18px; font-size: 14px; line-height: 1.6; }
 
-        /* 🔗 按鈕與頁尾 */
         .btn-group { width: 90%; margin: 50px auto 80px; }
         .btn { display: flex; align-items: center; justify-content: center; height: 60px; border-radius: 18px; text-decoration: none; font-weight: 700; margin-bottom: 18px; font-size: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
         .btn-line { background: #06C755; color: white; }
@@ -109,17 +113,15 @@
                 <span class="nav-tag">New Arrivals</span>
                 <div class="nav-title">春季新品上市</div>
                 <div class="nav-desc">穿上最溫柔的蕾絲，開啟美好。</div>
-                <div class="nav-arrow">›</div>
             </div>
         </div>
 
         <div class="nav-card" onclick="openModal('discountModal')">
             <img src="2.jpg" class="nav-img">
             <div class="nav-content">
-                <span class="nav-tag">Best Offer</span>
-                <div class="nav-title">精選超值折扣</div>
-                <div class="nav-desc">經典舒適款 3 件 85 折起。</div>
-                <div class="nav-arrow">›</div>
+                <span class="nav-tag">Special Offers</span>
+                <div class="nav-title">門市精選折扣</div>
+                <div class="nav-desc">經典款 3 件 $1980 起。</div>
             </div>
         </div>
     </div>
@@ -127,12 +129,11 @@
     <div id="newArrivalsModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('newArrivalsModal')">&times;</span>
-            <h3 style="text-align: center; color: var(--fadu-rose);">春季新品清單</h3>
+            <h3 style="text-align: center; color: var(--fadu-rose); font-size: 22px;">春季新品推薦</h3>
             <div class="item-list">
-                <div class="item-row"><img src="1.jpg"><div class="item-info"><h4>優雅蕾絲系列</h4><p>新品 85 折</p><span>專櫃詢問度最高，細緻工藝</span></div></div>
-                <div class="item-row"><img src="2.jpg"><div class="item-info"><h4>無痕呼吸系列</h4><p>新品 85 折</p><span>舒適無壓，日常必備首選</span></div></div>
-                <div class="item-row"><img src="combo_22_1.jpg"><div class="item-info"><h4>包色美背款</h4><p>新品 85 折</p><span>美背設計，適合春季穿搭</span></div></div>
-                <div class="item-row"><img src="combo_33_1.jpg"><div class="item-info"><h4>限定款睡衣</h4><p>新品 85 折</p><span>門市少量現貨，觸感滑順</span></div></div>
+                <div class="item-row"><img src="1.jpg"><div class="item-info"><h4>蕾絲質感系列</h4><p>買一送一</p><span>專櫃級精緻蕾絲，極致顯瘦剪裁，母親節限時回饋。</span></div></div>
+                <div class="item-row"><img src="2.jpg"><div class="item-info"><h4>涼感無鋼圈系列</h4><p>3件 $1980</p><span>瞬涼體感科技，夏日最清爽的包覆體驗。</span></div></div>
+                <div class="item-row"><img src="combo_22_1.jpg"><div class="item-info"><h4>顯瘦大罩杯系列</h4><p>2件 79 折</p><span>專為豐滿女孩設計，穩定承托，修飾胸線。</span></div></div>
             </div>
         </div>
     </div>
@@ -140,13 +141,13 @@
     <div id="discountModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('discountModal')">&times;</span>
-            <h3 style="text-align: center; color: var(--fadu-gold);">門市限時優惠</h3>
+            <h3 style="text-align: center; color: var(--fadu-gold); font-size: 22px;">門市限定好禮</h3>
             <div class="item-list">
-                <div class="item-row"><img src="2.jpg"><div class="item-info"><h4>經典暢銷組</h4><p>3件 85 折</p><span>累計銷量破萬，回購率最高</span></div></div>
-                <div class="item-row"><img src="combo_22_2.jpg"><div class="item-info"><h4>無痕替換組</h4><p>任選 2 套 8 折</p><span>限時加碼，內衣+內褲整套帶走</span></div></div>
-                <div class="item-row"><img src="IMG_4947.JPG"><div class="item-info"><h4>加購專區</h4><p>加購價 $399 起</p><span>購買正品即可享收納小物加購</span></div></div>
-                <div class="item-row"><img src="combo_luxury_1.jpg"><div class="item-info"><h4>絕版清倉區</h4><p>單件 5 折起</p><span>門市花車限定，售完不補</span></div></div>
-                <div class="item-row"><img src="combo_33_2.jpg"><div class="item-info"><h4>媽咪專屬組</h4><p>套組現省 $500</p><span>母親節限定包裝，送禮首選</span></div></div>
+                <div class="item-row"><img src="2.jpg"><div class="item-info"><h4>涼感/舒適內衣</h4><p>任選 3 件 $1980</p><span>經典明星款，日常換新首選，舒適無鋼圈不壓迫。</span></div></div>
+                <div class="item-row"><img src="1.jpg"><div class="item-info"><h4>蕾絲質感系列</h4><p>限時 買一送一</p><span>細膩蕾絲工藝，給予媽咪最優雅的貼身呵護。</span></div></div>
+                <div class="item-row"><img src="combo_22_2.jpg"><div class="item-info"><h4>超值舒適小褲</h4><p>5件 85折 / 10件 8折</p><span>親膚莫代爾材質，全方位透氣，囤貨最划算。</span></div></div>
+                <div class="item-row"><img src="combo_luxury_1.jpg"><div class="item-info"><h4>法朵機能男褲</h4><p>任選 3 件 $799 起</p><span>透氣涼感機能布料，給另一半最好的穿著感。</span></div></div>
+                <div class="item-row"><img src="IMG_4947.JPG"><div class="item-info"><h4>寵愛加碼區</h4><p>滿 $4500 贈收納袋</p><span>把握最後機會，領取精品級旅行收納袋。</span></div></div>
             </div>
         </div>
     </div>
@@ -159,7 +160,7 @@
         </div>
         <div class="gift-details">
             <strong>專屬分層收納空間</strong><br>
-            專為內衣設計獨立格層，確保不變形，衛生且整潔。霧面絲綢質感材質，為旅程增添優雅。
+            專為內衣設計獨立格層，確保不變形。霧面絲綢質感材質，為旅程增添一份優雅。
         </div>
     </section>
 
