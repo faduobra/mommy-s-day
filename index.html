@@ -13,90 +13,70 @@
             --white: #ffffff;
         }
 
-        body { 
-            font-family: 'Noto Sans TC', sans-serif; 
-            background-color: var(--fadu-bg); 
-            margin: 0; padding: 0; color: #4a4a4a;
-            overflow-x: hidden;
-        }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--fadu-bg); margin: 0; padding: 0; color: #4a4a4a; overflow-x: hidden; }
 
-        /* 🌸 2026 母親節主標題 */
-        .header-section {
-            padding: 50px 20px 70px;
-            text-align: center;
-            background: linear-gradient(180deg, #fce4ec 0%, var(--fadu-bg) 100%);
-        }
+        /* 🌸 標題區：2026 門市活動主標 */
+        .header-section { padding: 50px 20px 70px; text-align: center; background: linear-gradient(180deg, #fce4ec 0%, var(--fadu-bg) 100%); }
         .header-section span { font-size: 13px; letter-spacing: 3px; color: var(--fadu-rose); font-weight: 700; }
-        .header-section h1 { 
-            font-family: 'Noto Serif TC', serif; 
-            font-size: 28px; margin: 10px 0; color: #5a4a4a; 
-        }
+        .header-section h1 { font-family: 'Noto Serif TC', serif; font-size: 26px; margin: 10px 0; color: #5a4a4a; line-height: 1.4; }
 
-        /* 🚀 強效主活動區 (顯眼且不壓迫) */
+        /* 🚀 主活動卡片：一目了然 */
         .main-activity-banner {
-            width: 90%; margin: -40px auto 30px;
-            background: var(--white);
-            border-radius: 20px;
-            padding: 25px 10px;
-            text-align: center;
-            box-shadow: 0 12px 30px rgba(214, 140, 146, 0.15);
-            border: 1px solid rgba(214, 140, 146, 0.2);
+            width: 88%; margin: -45px auto 30px; background: var(--white);
+            border-radius: 15px; padding: 25px 15px; text-align: center;
+            box-shadow: 0 12px 30px rgba(214, 140, 146, 0.15); border: 1px solid rgba(214, 140, 146, 0.1);
         }
-        .activity-title { font-size: 20px; font-weight: 900; color: var(--fadu-rose); margin-bottom: 8px; }
-        .activity-gift { font-size: 15px; color: var(--fadu-gold); font-weight: 700; letter-spacing: 0.5px; }
+        .activity-title { font-size: 22px; font-weight: 900; color: var(--fadu-rose); margin-bottom: 8px; letter-spacing: 1px; }
+        .activity-gift { font-size: 15px; color: var(--fadu-gold); font-weight: 700; }
 
-        /* 🎠 專屬推薦組合：輪播圖區 (手機可滑動) */
+        /* 🎠 獨立輪播區塊樣式 */
+        .theme-section { margin-bottom: 40px; }
         .section-label { 
             padding-left: 20px; font-family: 'Noto Serif TC', serif; 
-            font-size: 18px; border-left: 5px solid var(--fadu-rose); margin: 30px 20px 15px;
+            font-size: 18px; border-left: 4px solid var(--fadu-rose); margin: 0 20px 15px;
+            display: flex; align-items: center; justify-content: space-between;
         }
-        .carousel-wrapper {
-            display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
-            gap: 15px; padding: 0 20px 20px;
-            -webkit-overflow-scrolling: touch;
-        }
-        .carousel-wrapper::-webkit-scrollbar { display: none; } /* 隱藏滾動條 */
+        .swipe-hint { font-size: 11px; color: #bbb; font-weight: normal; font-family: 'Noto Sans TC'; }
 
-        .combo-card {
-            flex: 0 0 80%; scroll-snap-align: center;
-            background: var(--white); border-radius: 15px;
-            overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
+        .carousel-track {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory;
+            gap: 12px; padding: 0 20px 10px;
         }
-        .combo-card img { width: 100%; height: 250px; object-fit: cover; }
-        .combo-info { padding: 15px; text-align: center; }
-        .combo-info h4 { margin: 0 0 5px; font-family: 'Noto Serif TC', serif; color: var(--fadu-rose); }
-        .combo-info p { font-size: 13px; color: #888; margin: 0; }
+        .carousel-track::-webkit-scrollbar { display: none; }
+
+        /* 輪播內的每一張圖 */
+        .photo-card {
+            flex: 0 0 75%; scroll-snap-align: center;
+            background: var(--white); border-radius: 12px;
+            overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+        }
+        .photo-card img { width: 100%; height: 320px; object-fit: cover; display: block; }
+        .photo-desc { padding: 12px; font-size: 14px; text-align: center; color: #666; background: #fff; }
 
         /* 🎁 滿額禮優化區 */
         .gift-section { 
-            width: 90%; margin: 30px auto; background: #fff; 
-            border-radius: 15px; padding: 20px; border: 1px solid #fdf2f3;
+            width: 88%; margin: 40px auto; background: #fff; 
+            border-radius: 15px; padding: 25px 15px; border: 1px solid #fdf2f3;
+            box-shadow: 0 5px 15px rgba(214, 140, 146, 0.05);
         }
-        .gift-header { text-align: center; margin-bottom: 15px; }
-        .gift-header h3 { font-family: 'Noto Serif TC', serif; color: var(--fadu-gold); font-size: 18px; margin: 0; }
-        .gift-header p { font-size: 12px; color: #bbb; margin-top: 5px; }
-        
-        .gift-grid { display: flex; gap: 10px; margin-bottom: 15px; }
+        .gift-header h3 { font-family: 'Noto Serif TC', serif; color: var(--fadu-gold); font-size: 20px; margin: 0; text-align: center; }
+        .gift-grid { display: flex; gap: 10px; margin: 20px 0; }
         .gift-img-item { flex: 1; border-radius: 8px; overflow: hidden; border: 1px solid #eee; }
         .gift-img-item img { width: 100%; height: auto; display: block; }
-        
-        .gift-value { 
-            text-align: center; font-size: 14px; font-weight: 700; color: #5a4a4a;
-            padding: 10px; border-top: 1px dashed #eee;
-        }
+        .gift-footer-text { text-align: center; font-size: 14px; color: #5a4a4a; line-height: 1.6; font-weight: 500; }
 
-        /* 🔗 行動按鈕 */
-        .btn-group { width: 90%; margin: 40px auto; }
+        /* 🔗 按鈕區 */
+        .btn-group { width: 88%; margin: 40px auto 60px; }
         .btn { 
             display: flex; align-items: center; justify-content: center; height: 55px;
             border-radius: 50px; text-decoration: none; font-weight: 700; margin-bottom: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            font-size: 16px;
         }
         .btn-line { background: #06C755; color: white; }
-        .btn-app { background: #5a4a4a; color: white; }
+        .btn-app { background: #4a4a4a; color: white; }
 
-        .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 40px; }
+        .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 40px; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -108,45 +88,68 @@
 
     <section class="main-activity-banner">
         <div class="activity-title">全館正品 任挑三件 85 折</div>
-        <div class="activity-gift">✨ 滿 $4500 贈「內衣旅行收納袋」✨</div>
+        <div class="activity-gift">滿 $4500 贈「內衣旅行收納袋」</div>
     </section>
 
-    <h2 class="section-label">專屬推薦組合 (左右滑動瀏覽)</h2>
-    <div class="carousel-wrapper">
-        <div class="combo-card">
-            <img src="combo_22.jpg" alt="舒適替換組">
-            <div class="combo-info">
-                <h4>【舒適替換組】</h4>
-                <p>2 內衣 + 2 內褲，日常優雅首選</p>
+    <div class="theme-section">
+        <div class="section-label">
+            【舒適替換組】 <span class="swipe-hint">左右滑動看更多 ➔</span>
+        </div>
+        <div class="carousel-track">
+            <div class="photo-card">
+                <img src="combo_22_1.jpg">
+                <div class="photo-desc">2內2褲：日常包色首選</div>
+            </div>
+            <div class="photo-card">
+                <img src="combo_22_2.jpg">
+                <div class="photo-desc">無痕舒適，穿過就回不去</div>
             </div>
         </div>
-        <div class="combo-card">
-            <img src="combo_33.jpg" alt="優雅煥新組">
-            <div class="combo-info">
-                <h4>【優雅煥新組】</h4>
-                <p>3 內衣 + 3 內褲，給妳最貼身的呵護</p>
+    </div>
+
+    <div class="theme-section">
+        <div class="section-label">
+            【優雅煥新組】 <span class="swipe-hint">左右滑動看更多 ➔</span>
+        </div>
+        <div class="carousel-track">
+            <div class="photo-card">
+                <img src="combo_33_1.jpg">
+                <div class="photo-desc">3內3褲：整套換新最優雅</div>
+            </div>
+            <div class="photo-card">
+                <img src="combo_33_2.jpg">
+                <div class="photo-desc">精緻蕾絲，給媽咪最好的</div>
             </div>
         </div>
-        <div class="combo-card">
-            <img src="combo_luxury.jpg" alt="豪華寵愛組">
-            <div class="combo-info">
-                <h4>【豪華寵愛組】</h4>
-                <p>搭配加購品湊滿 $4500，折扣贈品全拿！</p>
+    </div>
+
+    <div class="theme-section">
+        <div class="section-label">
+            【豪華寵愛組】 <span class="swipe-hint">左右滑動看更多 ➔</span>
+        </div>
+        <div class="carousel-track">
+            <div class="photo-card">
+                <img src="combo_luxury_1.jpg">
+                <div class="photo-desc">滿額達標：折扣贈品全拿</div>
+            </div>
+            <div class="photo-card">
+                <img src="combo_luxury_2.jpg">
+                <div class="photo-desc">搭配加購小物輕鬆湊滿 $4500</div>
             </div>
         </div>
     </div>
 
     <section class="gift-section">
         <div class="gift-header">
-            <h3>🎁 限量滿額：內衣旅行收納袋</h3>
-            <p>數量有限 ‧ 送完為止</p>
+            <h3>🎁 限量滿額禮遇</h3>
         </div>
         <div class="gift-grid">
             <div class="gift-img-item"><img src="IMG_4947.JPG"></div>
             <div class="gift-img-item"><img src="IMG_4948.JPG"></div>
         </div>
-        <div class="gift-value">
-            讓媽咪的出國、居家收納，優雅升級。
+        <div class="gift-footer-text">
+            <strong>內衣旅行收納袋</strong><br>
+            讓媽咪的旅行收納，從此優雅從容。
         </div>
     </section>
 
@@ -155,7 +158,7 @@
         <a href="https://bmai.app/cf09c1ac" class="btn btn-app">🎁 APP 新會員滿 1000 折 100</a>
     </div>
 
-    <footer class="footer">法朵 FADOU ‧ 台灣內衣品牌</footer>
+    <footer class="footer">法朵 FADOU ‧ Pure Comfort, Infinite Elegance.</footer>
 
 </body>
 </html>
