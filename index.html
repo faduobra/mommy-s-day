@@ -27,11 +27,13 @@
         .hero-promo-container { width: 90%; margin: -50px auto 20px; position: relative; z-index: 10; }
         .hero-promo-card {
             background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-radius: 20px; padding: 35px 20px; text-align: center;
+            border-radius: 20px; padding: 30px 20px; text-align: center;
             box-shadow: 0 20px 45px rgba(214, 140, 146, 0.15); border: 1px solid #fff;
         }
+        .promo-sub-text { font-size: 13px; color: var(--fadu-taupe); line-height: 1.6; margin-top: 15px; border-top: 1px dashed #eee; padding-top: 15px; font-weight: 400; }
+        .promo-note { font-size: 11px; color: #bbb; margin-top: 5px; }
 
-        /* 🏷️ 新客專屬優惠 (並排樣式) */
+        /* 🏷️ 新客專屬優惠 (並排) */
         .new-customer-section { width: 92%; margin: 0 auto 40px; text-align: center; }
         .section-tag-wrapper { margin-bottom: 15px; }
         .section-tag { background: var(--fadu-gold); color: white; padding: 5px 20px; border-radius: 50px; font-size: 13px; font-weight: 700; letter-spacing: 0.2em; }
@@ -42,14 +44,21 @@
         .btn-main-small { font-size: 15px; font-weight: 900; line-height: 1.3; margin-top: 4px; }
         
         /* 🛍️ 導購入口小卡 */
-        .nav-section { width: 92%; margin: 0 auto 40px; }
-        .nav-card { background: var(--white); border-radius: 20px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03); cursor: pointer; display: flex; align-items: center; border: 1px solid #fdf2f3; }
+        .nav-section { width: 92%; margin: 0 auto 20px; }
+        .nav-card { background: var(--white); border-radius: 20px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03); cursor: pointer; display: flex; align-items: center; border: 1px solid #fdf2f3; position: relative; }
         .nav-img-main { width: 100px; height: 100px; object-fit: cover; flex-shrink: 0; }
         .nav-info-bar { padding: 0 20px; flex: 1; }
         .nav-info-bar h2 { margin: 0; font-size: 18px; font-weight: 900; }
         .nav-info-bar span { color: var(--fadu-rose); font-size: 12px; font-weight: 700; margin-top: 4px; display: block; }
+        .view-more-tag { position: absolute; right: 15px; bottom: 12px; font-size: 11px; background: var(--fadu-warm); color: var(--fadu-gold); padding: 2px 10px; border-radius: 50px; border: 1px solid var(--fadu-gold); font-weight: 700; }
 
-        /* 🎁 滿額禮區塊 (加入限量感標籤) */
+        /* ✅ 品牌承諾區塊 (兩兩一排) */
+        .brand-promise { width: 92%; margin: 0 auto 40px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
+        .promise-item { background: #fff; border: 1px solid #fdf2f3; padding: 15px 10px; border-radius: 18px; width: calc(50% - 5px); text-align: center; box-sizing: border-box; }
+        .promise-icon { font-size: 18px; margin-bottom: 5px; display: block; }
+        .promise-text { font-size: 12px; font-weight: 700; color: var(--fadu-taupe); }
+
+        /* 🎁 限量滿額禮 */
         .gift-showcase { width: 90%; margin: 40px auto; background: #fff; border-radius: 25px; padding: 30px 20px; border: 1px solid #fdf2f3; position: relative; }
         .limit-tag { position: absolute; top: -12px; right: 20px; background: #ff4d4d; color: #fff; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 900; animation: blink 1.5s infinite; }
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.6; } 100% { opacity: 1; } }
@@ -59,30 +68,26 @@
         .gift-item-title { display: block; font-weight: 900; color: var(--text-main); font-size: 15px; margin-bottom: 5px; border-left: 3px solid var(--fadu-rose); padding-left: 10px; margin-top: 15px; }
         .gift-item-p { font-size: 13px; color: #777; line-height: 1.7; margin: 0 0 10px 13px; }
 
-        /* ✅ 品牌承諾區塊 (台灣製等內容) */
-        .brand-promise { width: 92%; margin: 0 auto 40px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-        .promise-item { background: #fff; border: 1px solid #fdf2f3; padding: 12px; border-radius: 15px; width: 42%; text-align: center; }
-        .promise-icon { font-size: 18px; margin-bottom: 5px; display: block; }
-        .promise-text { font-size: 12px; font-weight: 700; color: var(--fadu-taupe); }
-
         /* 🔗 底部導聯 */
         .footer-links { width: 92%; margin: 0 auto 50px; text-align: center; }
         .link-btn { display: block; width: 100%; padding: 15px 0; border-radius: 15px; margin-bottom: 12px; text-decoration: none; font-weight: 900; font-size: 16px; border: 1px solid #ddd; transition: 0.3s; }
         .btn-web { background: white; color: var(--text-main); }
         .btn-store { background: var(--fadu-taupe); color: white; border: none; }
 
-        /* 📦 彈窗樣式保留 */
+        /* 📦 彈窗樣式 (改為全內容呈現) */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); }
-        .modal-content { background: var(--fadu-warm); margin: 8% auto; padding: 0; width: 92%; max-height: 80vh; border-radius: 30px; overflow-y: auto; position: relative; animation: slideUp 0.3s ease; }
-        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; color: var(--fadu-taupe); z-index: 10; cursor: pointer; }
+        .modal-content { background: var(--fadu-warm); margin: 5% auto; padding: 0; width: 92%; max-height: 85vh; border-radius: 30px; overflow-y: auto; position: relative; animation: slideUp 0.3s ease; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; color: var(--fadu-taupe); z-index: 100; cursor: pointer; }
         .modal-body { padding: 40px 15px 30px; }
-        .modal-title { text-align: center; font-size: 20px; font-weight: 900; margin-bottom: 25px; }
-        .visual-item-v2 { background: #fff; border-radius: 20px; margin-bottom: 20px; padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #fdf2f3; }
-        .item-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+        .modal-title { text-align: center; font-size: 20px; font-weight: 900; margin-bottom: 25px; color: var(--fadu-rose); }
+        
+        .visual-item-full { background: #fff; border-radius: 20px; margin-bottom: 25px; padding: 15px; border: 1px solid #fdf2f3; }
+        .item-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #eee; padding-bottom: 10px; }
         .item-header h4 { margin: 0; font-size: 16px; font-weight: 900; }
-        .price-badge-small { background: var(--fadu-rose); color: #fff; padding: 3px 8px; border-radius: 5px; font-size: 12px; font-weight: 700; }
-        .image-scroll-container { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; }
-        .scroll-img { width: 150px; height: 150px; border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+        
+        /* 圖片網格佈局 */
+        .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .grid-img { width: 100%; aspect-ratio: 1/1; border-radius: 12px; object-fit: cover; border: 1px solid #f9f9f9; }
 
         .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 40px; }
     </style>
@@ -98,6 +103,11 @@
         <section class="hero-promo-card">
             <span style="font-size: 24px; font-weight: 900; color: var(--fadu-rose);">全館正品 任挑三件 85 折</span><br>
             <span style="font-size: 15px; color: var(--fadu-gold); font-weight: 700;">✨ 滿 $4,500 即贈精品旅行收納袋 ✨</span>
+            <div class="promo-sub-text">
+                即日起至 5/10，法朵實體門市全館正品內衣褲，任挑三件享 85 折<br>
+                <strong>快趁此機會帶媽媽女兒來挑選試穿吧！</strong>
+                <div class="promo-note">（組合商品及特價品不列入活動）</div>
+            </div>
         </section>
     </div>
 
@@ -119,10 +129,12 @@
         <div class="nav-card" onclick="openModal('newModal')">
             <img src="911６首圖－藍.jpg" class="nav-img-main">
             <div class="nav-info-bar"><h2>春季新品上市</h2><span>質感機能系列 ›</span></div>
+            <div class="view-more-tag">點我看更多</div>
         </div>
         <div class="nav-card" onclick="openModal('saleModal')">
             <img src="依妹思-8080粉.jpeg" class="nav-img-main">
             <div class="nav-info-bar"><h2>門市精選折扣</h2><span>年度熱銷 3 件 $1980 ›</span></div>
+            <div class="view-more-tag">點我看更多</div>
         </div>
     </div>
 
@@ -157,39 +169,52 @@
             <span class="close-modal" onclick="closeModal('saleModal')">&times;</span>
             <div class="modal-body">
                 <div class="modal-title">門市精選折扣</div>
-                <div class="visual-item-v2">
-                    <div class="item-header"><h4>舒適內衣</h4><span class="price-badge-small">3件 $1980</span></div>
-                    <div class="image-scroll-container">
-                        <img src="依妹思-8080粉.jpeg" class="scroll-img"><img src="依妹思-8132紫.jpeg" class="scroll-img">
-                        <img src="9011牛仔＋抹茶首圖-3.jpg" class="scroll-img"><img src="9013首圖-20.jpg" class="scroll-img">
+                
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>舒適內衣</h4><span class="price-badge-small" style="background:var(--fadu-rose); color:#fff; padding:3px 8px; border-radius:5px; font-size:12px;">3件 $1980</span></div>
+                    <div class="image-grid">
+                        <img src="依妹思-8080粉.jpeg" class="grid-img">
+                        <img src="依妹思-8132紫.jpeg" class="grid-img">
+                        <img src="9011牛仔＋抹茶首圖-3.jpg" class="grid-img">
+                        <img src="9013首圖-20.jpg" class="grid-img">
                     </div>
                 </div>
-                <div class="visual-item-v2">
-                    <div class="item-header"><h4>質感機能內衣</h4><span class="price-badge-small">買一送一</span></div>
-                    <div class="image-scroll-container">
-                        <img src="911６首圖－藍.jpg" class="scroll-img"><img src="9015-首圖-09.jpg" class="scroll-img">
-                        <img src="玳蕾綺6391紫.jpeg" class="scroll-img"><img src="玳蕾綺6383粉.jpeg" class="scroll-img">
-                        <img src="8125灰.jpeg" class="scroll-img">
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>質感機能內衣</h4><span class="price-badge-small" style="background:var(--fadu-rose); color:#fff; padding:3px 8px; border-radius:5px; font-size:12px;">買一送一</span></div>
+                    <div class="image-grid">
+                        <img src="911６首圖－藍.jpg" class="grid-img">
+                        <img src="9015-首圖-09.jpg" class="grid-img">
+                        <img src="玳蕾綺6391紫.jpeg" class="grid-img">
+                        <img src="玳蕾綺6383粉.jpeg" class="grid-img">
+                        <img src="8125灰.jpeg" class="grid-img">
                     </div>
                 </div>
-                <div class="visual-item-v2">
-                    <div class="item-header"><h4>顯瘦大罩杯內衣</h4><span class="price-badge-small">2件 79折</span></div>
-                    <div class="image-scroll-container">
-                        <img src="9708黑.png" class="scroll-img"><img src="9708藍.png" class="scroll-img">
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>顯瘦大罩杯內衣</h4><span class="price-badge-small" style="background:var(--fadu-rose); color:#fff; padding:3px 8px; border-radius:5px; font-size:12px;">2件 79折</span></div>
+                    <div class="image-grid">
+                        <img src="9708黑.png" class="grid-img">
+                        <img src="9708藍.png" class="grid-img">
                     </div>
                 </div>
-                <div class="visual-item-v2">
-                    <div class="item-header"><h4>舒適小褲</h4><span class="price-badge-small">5件 85折 / 10件 8折</span></div>
-                    <div class="image-scroll-container">
-                        <img src="21315-對色首圖-08.jpg" class="scroll-img"><img src="21322首圖-07.jpg" class="scroll-img">
-                        <img src="2101首圖－新色-14.jpg" class="scroll-img"><img src="2610首圖-26.jpg" class="scroll-img">
-                        <img src="3215首圖-靛青藍_2.jpg" class="scroll-img">
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>舒適小褲</h4><span class="price-badge-small" style="background:var(--fadu-rose); color:#fff; padding:3px 8px; border-radius:5px; font-size:12px;">10件 8折</span></div>
+                    <div class="image-grid">
+                        <img src="21315-對色首圖-08.jpg" class="grid-img">
+                        <img src="21322首圖-07.jpg" class="grid-img">
+                        <img src="2101首圖－新色-14.jpg" class="grid-img">
+                        <img src="2610首圖-26.jpg" class="grid-img">
                     </div>
                 </div>
-                <div class="visual-item-v2">
-                    <div class="item-header"><h4>法朵機能男褲</h4><span class="price-badge-small">3件 $799 起</span></div>
-                    <div class="image-scroll-container">
-                        <img src="7241首圖M-XL.jpg" class="scroll-img"><img src="7241首圖-科幻銀.jpg" class="scroll-img"><img src="7541-2.jpg" class="scroll-img">
+
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>法朵機能男褲</h4><span class="price-badge-small" style="background:var(--fadu-rose); color:#fff; padding:3px 8px; border-radius:5px; font-size:12px;">3件 $799 起</span></div>
+                    <div class="image-grid">
+                        <img src="7241首圖M-XL.jpg" class="grid-img">
+                        <img src="7241首圖-科幻銀.jpg" class="grid-img">
+                        <img src="7541-2.jpg" class="grid-img">
                     </div>
                 </div>
             </div>
@@ -201,10 +226,11 @@
             <span class="close-modal" onclick="closeModal('newModal')">&times;</span>
             <div class="modal-body">
                 <div class="modal-title">春季新品推薦</div>
-                <div class="visual-item-v2">
-                    <div class="item-header"><h4>質感機能內衣</h4></div>
-                    <div class="image-scroll-container">
-                        <img src="911６首圖－藍.jpg" class="scroll-img"><img src="9015-首圖-09.jpg" class="scroll-img">
+                <div class="visual-item-full">
+                    <div class="item-header"><h4>質感機能系列</h4></div>
+                    <div class="image-grid">
+                        <img src="911６首圖－藍.jpg" class="grid-img">
+                        <img src="9015-首圖-09.jpg" class="grid-img">
                     </div>
                 </div>
             </div>
