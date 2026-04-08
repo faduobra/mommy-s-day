@@ -49,34 +49,48 @@
         .modal-body { padding: 40px 15px 30px; }
         .modal-title { text-align: center; font-size: 20px; font-weight: 900; color: var(--text-main); margin-bottom: 25px; }
 
-        /* 🖼️ 多圖活動卡片 (優化間距) */
+        /* 🖼️ 多圖活動卡片 */
         .visual-item-v2 { background: #fff; border-radius: 20px; margin-bottom: 20px; padding: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #fdf2f3; }
-        
-        /* 緊湊標題區 */
         .item-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
-        .item-header h4 { margin: 0; font-size: 16px; font-weight: 900; letter-spacing: -0.02em; }
+        .item-header h4 { margin: 0; font-size: 16px; font-weight: 900; }
         .price-badge-small { background: var(--fadu-rose); color: #fff; padding: 3px 8px; border-radius: 5px; font-size: 12px; font-weight: 700; }
 
-        /* 圖片滑動 */
         .image-scroll-container { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px; scrollbar-width: none; -ms-overflow-style: none; }
         .image-scroll-container::-webkit-scrollbar { display: none; }
         .scroll-img { width: 150px; height: 150px; border-radius: 12px; object-fit: cover; flex-shrink: 0; border: 1px solid #fdf2f3; }
         .item-desc-text { font-size: 12px; color: var(--fadu-taupe); line-height: 1.5; margin-top: 4px; }
 
-        /* 🎁 限量滿額禮 */
-        .gift-showcase { width: 90%; margin: 40px auto; background: #fff; border-radius: 20px; padding: 25px; border: 1px solid #fdf2f3; text-align: center; }
-        
-        /* 🔥 導購按鈕 */
+        /* 🎁 限量滿額禮區塊 */
+        .gift-showcase { width: 90%; margin: 40px auto; background: #fff; border-radius: 20px; padding: 25px; border: 1px solid #fdf2f3; }
+        .gift-title { color: var(--fadu-gold); font-size: 18px; font-weight: 900; margin-bottom: 15px; text-align: center; }
+        .gift-visual { display: flex; gap: 10px; margin-bottom: 15px; }
+        .gift-visual img { width: 50%; border-radius: 12px; }
+        .gift-details { background: #fdfafb; padding: 15px; border-radius: 15px; font-size: 13px; line-height: 1.6; color: #666; }
+
+        /* 🔥 超閃亮導購按鈕 */
         .btn-group { width: 92%; margin: 60px auto 80px; }
         .cta-btn { 
-            display: flex; align-items: center; justify-content: space-between; padding: 22px 28px; border-radius: 22px; 
-            text-decoration: none; margin-bottom: 22px; transition: all 0.3s ease; position: relative; overflow: hidden;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.1); 
+            display: flex; align-items: center; justify-content: space-between; padding: 22px 25px; border-radius: 20px; 
+            text-decoration: none; margin-bottom: 22px; transition: 0.3s; position: relative; overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15); animation: pulse 2.5s infinite;
         }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.02); } 100% { transform: scale(1); } }
+        
+        /* 閃光特效 */
+        .cta-btn::after {
+            content: ''; position: absolute; top: -50%; left: -60%; width: 20%; height: 200%;
+            background: rgba(255, 255, 255, 0.3); transform: rotate(30deg);
+            animation: shine 3s infinite linear;
+        }
+        @keyframes shine { 0% { left: -60%; } 15% { left: 130%; } 100% { left: 130%; } }
+
         .btn-line { background: linear-gradient(135deg, #06C755 0%, #05B34C 100%); color: white; }
         .btn-app { background: linear-gradient(135deg, #2D2929 0%, #1A1818 100%); color: white; }
+        
+        .btn-text-box { display: flex; flex-direction: column; }
+        .btn-sub { font-size: 10px; font-weight: 500; opacity: 0.8; letter-spacing: 0.1em; }
         .btn-main-text { font-size: 18px; font-weight: 900; }
-        .btn-icon-circle { width: 35px; height: 35px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .btn-icon-circle { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; }
 
         .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 40px; }
     </style>
@@ -98,11 +112,11 @@
     <div class="nav-section">
         <div class="nav-card" onclick="openModal('newModal')">
             <img src="911６首圖－藍.jpg" class="nav-img-main">
-            <div class="nav-info-bar"><h2>春季新品上市</h2><span>細緻蕾絲系列 ›</span></div>
+            <div class="nav-info-bar"><h2>春季新品上市</h2><span>質感機能系列 ›</span></div>
         </div>
         <div class="nav-card" onclick="openModal('saleModal')">
             <img src="依妹思-8080粉.jpeg" class="nav-img-main">
-            <div class="nav-info-bar"><h2>門市精選折扣</h2><span>熱銷 3 件 $1980 ›</span></div>
+            <div class="nav-info-bar"><h2>門市精選折扣</h2><span>熱銷活動 3 件 $1980 ›</span></div>
         </div>
     </div>
 
@@ -112,7 +126,7 @@
             <div class="modal-body">
                 <div class="modal-title">春季新品推薦</div>
                 <div class="visual-item-v2">
-                    <div class="item-header"><h4>蕾絲質感 / 買一送一</h4></div>
+                    <div class="item-header"><h4>質感機能內衣 / 買一送一</h4></div>
                     <div class="image-scroll-container">
                         <img src="911６首圖－藍.jpg" class="scroll-img">
                         <img src="9015-首圖-09.jpg" class="scroll-img">
@@ -129,24 +143,17 @@
                 <div class="modal-title">門市精選折扣</div>
                 
                 <div class="visual-item-v2">
-                    <div class="item-header">
-                        <h4>舒適內衣</h4>
-                        <span class="price-badge-small">3件 $1980</span>
-                    </div>
+                    <div class="item-header"><h4>舒適內衣</h4><span class="price-badge-small">3件 $1980</span></div>
                     <div class="image-scroll-container">
                         <img src="依妹思-8080粉.jpeg" class="scroll-img">
                         <img src="依妹思-8132紫.jpeg" class="scroll-img">
                         <img src="9011牛仔＋抹茶首圖-3.jpg" class="scroll-img">
                         <img src="9013首圖-20.jpg" class="scroll-img">
                     </div>
-                    <p class="item-desc-text">經典熱銷款，打造日常最舒適的包覆感。</p>
                 </div>
 
                 <div class="visual-item-v2">
-                    <div class="item-header">
-                        <h4>蕾絲質感內衣</h4>
-                        <span class="price-badge-small">買一送一</span>
-                    </div>
+                    <div class="item-header"><h4>質感機能內衣</h4><span class="price-badge-small">買一送一</span></div>
                     <div class="image-scroll-container">
                         <img src="911６首圖－藍.jpg" class="scroll-img">
                         <img src="9015-首圖-09.jpg" class="scroll-img">
@@ -154,26 +161,18 @@
                         <img src="玳蕾綺6383粉.jpeg" class="scroll-img">
                         <img src="8125灰.jpeg" class="scroll-img">
                     </div>
-                    <p class="item-desc-text">精緻刺繡工藝，展現優雅迷人的法式風情。</p>
                 </div>
 
                 <div class="visual-item-v2">
-                    <div class="item-header">
-                        <h4>顯瘦大罩杯內衣</h4>
-                        <span class="price-badge-small">2件 79折</span>
-                    </div>
+                    <div class="item-header"><h4>顯瘦大罩杯內衣</h4><span class="price-badge-small">2件 79折</span></div>
                     <div class="image-scroll-container">
                         <img src="9708黑.png" class="scroll-img">
                         <img src="9708藍.png" class="scroll-img">
                     </div>
-                    <p class="item-desc-text">穩定支撐，修飾胸線，讓豐滿女孩也自信迷人。</p>
                 </div>
 
                 <div class="visual-item-v2">
-                    <div class="item-header">
-                        <h4>舒適小褲</h4>
-                        <span class="price-badge-small">5件 85折 / 10件 8折</span>
-                    </div>
+                    <div class="item-header"><h4>舒適小褲</h4><span class="price-badge-small">5件85折 / 10件8折</span></div>
                     <div class="image-scroll-container">
                         <img src="21315-對色首圖-08.jpg" class="scroll-img">
                         <img src="21322首圖-07.jpg" class="scroll-img">
@@ -181,41 +180,47 @@
                         <img src="2610首圖-26.jpg" class="scroll-img">
                         <img src="3215首圖-靛青藍_2.jpg" class="scroll-img">
                     </div>
-                    <p class="item-desc-text">親膚透氣材質，天天換穿好心情。</p>
                 </div>
 
                 <div class="visual-item-v2">
-                    <div class="item-header">
-                        <h4>法朵機能男褲</h4>
-                        <span class="price-badge-small">3件 $799 起</span>
-                    </div>
+                    <div class="item-header"><h4>法朵機能男褲</h4><span class="price-badge-small">3件 $799 起</span></div>
                     <div class="image-scroll-container">
                         <img src="7241首圖M-XL.jpg" class="scroll-img">
                         <img src="7241首圖-科幻銀.jpg" class="scroll-img">
                         <img src="7541-2.jpg" class="scroll-img">
                     </div>
-                    <p class="item-desc-text">涼感機能布料，給另一半乾爽舒適的體感。</p>
                 </div>
-
             </div>
         </div>
     </div>
 
     <section class="gift-showcase">
-        <h3 style="color: var(--fadu-gold); font-size: 18px; margin-bottom: 15px;">限量滿額禮：精品旅行收納袋</h3>
-        <div style="display: flex; gap: 10px; margin-bottom: 10px;">
-            <img src="IMG_4947.JPG" style="width: 50%; border-radius: 12px;">
-            <img src="IMG_4948.JPG" style="width: 50%; border-radius: 12px;">
+        <h3 class="gift-title">限量滿額禮：精品旅行收納袋</h3>
+        <div class="gift-visual">
+            <img src="IMG_4947.JPG">
+            <img src="IMG_4948.JPG">
         </div>
-        <p style="font-size: 13px; color: #666;">全館消費滿 $4,500 即贈精品收納好禮</p>
+        <div class="gift-details">
+            <strong>專屬分層收納空間</strong><br>
+            專為內衣設計獨立格層，確保不壓迫變形。霧面絲綢質感材質，為妳的每一趟旅程增添一份從容與優雅。
+        </div>
     </section>
 
     <div class="btn-group">
         <a href="https://lin.ee/U2TINN9" class="cta-btn btn-line">
-            <span class="btn-main-text">領取免費內褲兌換券</span><div class="btn-icon-circle">🎁</div>
+            <div class="btn-text-box">
+                <span class="btn-sub">GIFT FOR YOU</span>
+                <span class="btn-main-text">加入 LINE 領取兌換券</span>
+            </div>
+            <div class="btn-icon-circle">🎁</div>
         </a>
+
         <a href="https://bmai.app/cf09c1ac" class="cta-btn btn-app">
-            <span class="btn-main-text">APP 新會員現折 $100</span><div class="btn-icon-circle">✨</div>
+            <div class="btn-text-box">
+                <span class="btn-sub">APP SPECIAL</span>
+                <span class="btn-main-text">APP 首購現折 $100</span>
+            </div>
+            <div class="btn-icon-circle">✨</div>
         </a>
     </div>
 
