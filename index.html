@@ -7,131 +7,119 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --fadu-rose: #d68c92;
-            --fadu-warm: #fffafb;
-            --fadu-gold: #b38b4d;
-            --fadu-taupe: #a89f9e;
-            --fadu-brown: #8e736a;
-            --white: #ffffff;
-            --text-main: #4a4242;
+            --fadu-pink: #efb1b6; 
+            --fadu-rose-soft: #f4d3d6; 
+            --fadu-cream: #fff9f6; 
+            --fadu-pearl: #ffffff; 
+            --fadu-gold-soft: #d4b0a2; 
+            --fadu-text: #6b5a59; 
+            --line-green: #79d0a7; 
         }
 
-        body { font-family: 'Jost', 'Noto Sans TC', sans-serif; background-color: var(--fadu-warm); margin: 0; padding: 0; color: var(--text-main); letter-spacing: 0.05em; overflow-x: hidden; }
+        body { font-family: 'Jost', 'Noto Sans TC', sans-serif; background-color: var(--fadu-cream); margin: 0; padding: 0; color: var(--fadu-text); letter-spacing: 0.05em; overflow-x: hidden; }
 
         /* 🌸 首頁標題 */
-        .header-section { padding: 60px 20px 80px; text-align: center; background: linear-gradient(180deg, #fdf1f2 0%, var(--fadu-warm) 100%); }
-        .header-section span { font-size: 11px; letter-spacing: 0.4em; color: var(--fadu-rose); font-weight: 500; }
-        .header-section h1 { font-size: 28px; margin: 15px 0 0; font-weight: 900; line-height: 1.4; }
+        .header-section { padding: 70px 20px 90px; text-align: center; background: radial-gradient(circle at top, #fff0f1 0%, var(--fadu-cream) 100%); position: relative; }
+        .header-section span { font-size: 11px; letter-spacing: 0.5em; color: var(--fadu-pink); font-weight: 700; text-transform: uppercase; }
+        .header-section h1 { font-size: 30px; margin: 15px 0 0; font-weight: 900; line-height: 1.4; color: var(--fadu-text); }
 
         /* 🎀 頂部主優惠卡片 */
-        .hero-promo-container { width: 90%; margin: -50px auto 20px; position: relative; z-index: 10; }
+        .hero-promo-container { width: 90%; margin: -50px auto 30px; position: relative; z-index: 10; }
         .hero-promo-card {
-            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
-            border-radius: 20px; padding: 30px 20px; text-align: center;
-            box-shadow: 0 20px 45px rgba(214, 140, 146, 0.15); border: 1px solid #fff;
+            background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(15px);
+            border-radius: 25px; padding: 35px 20px; text-align: center;
+            box-shadow: 0 15px 40px rgba(239, 177, 182, 0.2); border: 1.5px solid #fff;
         }
-        .promo-sub-text { font-size: 13px; color: var(--fadu-taupe); line-height: 1.6; margin-top: 15px; border-top: 1px dashed #eee; padding-top: 15px; font-weight: 400; }
-        .promo-note { font-size: 11px; color: #bbb; margin-top: 5px; }
+        .main-promo-title { font-size: 25px; font-weight: 900; color: var(--fadu-pink); }
+        .promo-sub-text { font-size: 14px; color: var(--fadu-text); line-height: 1.7; margin-top: 18px; border-top: 1px solid var(--fadu-rose-soft); padding-top: 18px; font-weight: 400; }
 
-        /* ✨ FADOU 專屬歡迎禮 */
-        .welcome-gift-section { width: 92%; margin: 10px auto 45px; text-align: center; }
-        .welcome-header { margin-bottom: 20px; position: relative; display: inline-block; }
-        .welcome-header h3 { font-size: 16px; font-weight: 900; color: var(--fadu-gold); margin: 0; letter-spacing: 0.2em; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .welcome-header::after { content: ""; display: block; width: 40px; height: 2px; background: var(--fadu-gold); margin: 8px auto 0; border-radius: 2px; opacity: 0.5; }
-        .gift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 0 5px; }
-        .gift-card { text-decoration: none; border-radius: 24px; padding: 22px 15px; display: flex; flex-direction: column; align-items: center; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); box-shadow: 0 10px 25px rgba(0,0,0,0.06); position: relative; overflow: hidden; }
+        /* ✨ 專屬歡迎禮 */
+        .welcome-gift-section { width: 92%; margin: 10px auto 50px; text-align: center; }
+        .welcome-header h3 { font-size: 17px; font-weight: 900; color: var(--fadu-pink); margin: 0 0 20px; letter-spacing: 0.2em; }
+        .gift-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .gift-card { text-decoration: none; border-radius: 24px; padding: 25px 15px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 8px 20px rgba(0,0,0,0.04); color: white; transition: 0.2s; }
         .gift-card:active { transform: scale(0.95); }
-        .card-line { background: linear-gradient(135deg, #07D65C 0%, #05B34C 100%); color: white; }
-        .card-app { background: linear-gradient(135deg, #9C837A 0%, #7A6259 100%); color: white; }
-        .gift-icon { font-size: 24px; margin-bottom: 8px; }
-        .gift-label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; opacity: 0.9; margin-bottom: 4px; }
-        .gift-main-title { font-size: 15px; font-weight: 900; line-height: 1.4; }
+        .card-line { background: linear-gradient(135deg, #a7e0c4 0%, var(--line-green) 100%); }
+        .card-app { background: linear-gradient(135deg, #eec9c5 0%, #d6a19d 100%); }
+        .gift-main-title { font-size: 15px; font-weight: 900; line-height: 1.4; margin-top: 5px; }
 
-        /* 🛍️ 導購入口小卡 */
-        .nav-section { width: 92%; margin: 0 auto 20px; }
-        .nav-card { background: var(--white); border-radius: 20px; margin-bottom: 18px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.03); cursor: pointer; display: flex; align-items: center; border: 1px solid #fdf2f3; position: relative; }
-        .nav-img-main { width: 100px; height: 100px; object-fit: cover; flex-shrink: 0; }
+        /* 🛍️ 導購入口 */
+        .nav-section { width: 92%; margin: 0 auto 30px; }
+        .nav-card { background: var(--fadu-pearl); border-radius: 22px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(239, 177, 182, 0.1); display: flex; align-items: center; border: 1px solid #fff; position: relative; cursor: pointer; }
+        .nav-img-main { width: 110px; height: 110px; object-fit: cover; }
         .nav-info-bar { padding: 0 20px; flex: 1; }
-        .nav-info-bar h2 { margin: 0; font-size: 18px; font-weight: 900; }
-        .nav-info-bar span { color: var(--fadu-rose); font-size: 12px; font-weight: 700; margin-top: 4px; display: block; }
-        .view-more-tag { position: absolute; right: 15px; bottom: 12px; font-size: 11px; background: var(--fadu-warm); color: var(--fadu-gold); padding: 2px 10px; border-radius: 50px; border: 1px solid var(--fadu-gold); font-weight: 700; }
+        .nav-info-bar h2 { margin: 0; font-size: 18px; font-weight: 900; color: var(--fadu-text); }
+        .nav-info-bar span { color: var(--fadu-pink); font-size: 13px; font-weight: 700; margin-top: 5px; display: block; }
 
-        /* ✅ 品牌承諾區塊 */
-        .brand-promise { width: 92%; margin: 0 auto 40px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; }
-        .promise-item { background: #fff; border: 1px solid #fdf2f3; padding: 15px 10px; border-radius: 18px; width: calc(50% - 5px); text-align: center; box-sizing: border-box; }
-        .promise-icon { font-size: 18px; margin-bottom: 5px; display: block; }
-        .promise-text { font-size: 12px; font-weight: 700; color: var(--fadu-taupe); }
+        /* ✅ 品牌承諾 */
+        .brand-promise { width: 92%; margin: 0 auto 50px; display: flex; flex-wrap: wrap; gap: 12px; }
+        .promise-item { background: #fff; padding: 18px 10px; border-radius: 20px; width: calc(50% - 6px); text-align: center; box-sizing: border-box; border: 1px solid var(--fadu-rose-soft); }
+        .promise-text { font-size: 12px; font-weight: 700; color: var(--fadu-text); }
 
         /* 🌸 私藏小撇步 */
-        .tips-section { width: 92%; margin: 0 auto 40px; }
-        .tip-card-dashed { background: #fff; border: 1.5px dashed var(--fadu-rose); border-radius: 20px; padding: 18px; margin-bottom: 15px; display: flex; align-items: center; gap: 15px; }
-        .tip-card-solid { background: #fff; border-radius: 22px; padding: 22px; box-shadow: 0 8px 20px rgba(214, 140, 146, 0.05); border: 1px solid #fdf2f3; }
+        .tip-card-dashed { background: #fff; border: 1.5px dashed var(--fadu-pink); border-radius: 22px; padding: 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 15px; }
+        .tip-card-solid { background: #fff; border-radius: 22px; padding: 25px; box-shadow: 0 10px 30px rgba(239, 177, 182, 0.1); border: 1px solid var(--fadu-pearl); }
+        .tip-title { font-weight: 900; color: var(--fadu-pink); font-size: 15px; display: block; margin-bottom: 12px; border-left: 4px solid var(--fadu-pink); padding-left: 12px; }
 
         /* 🎁 限量滿額禮 */
-        .gift-showcase { width: 90%; margin: 40px auto; background: #fff; border-radius: 25px; padding: 30px 20px; border: 1px solid #fdf2f3; position: relative; }
-        .limit-tag { position: absolute; top: -12px; right: 20px; background: #ff4d4d; color: #fff; padding: 4px 12px; border-radius: 50px; font-size: 11px; font-weight: 900; }
-        .gift-title { color: var(--fadu-gold); font-size: 19px; font-weight: 900; margin-bottom: 20px; text-align: center; }
-        .gift-visual { display: flex; gap: 12px; margin-bottom: 20px; }
-        .gift-visual img { width: 50%; border-radius: 15px; }
+        .gift-showcase { width: 92%; margin: 50px auto; background: #fff; border-radius: 30px; padding: 35px 25px; border: 1px solid var(--fadu-rose-soft); position: relative; box-sizing: border-box; }
+        .limit-tag { position: absolute; top: -15px; right: 25px; background: var(--fadu-pink); color: #fff; padding: 6px 16px; border-radius: 50px; font-size: 12px; font-weight: 900; }
+        .gift-title { color: var(--fadu-pink); font-size: 21px; font-weight: 900; margin-bottom: 25px; text-align: center; }
+        .gift-visual { display: flex; gap: 15px; margin-bottom: 25px; }
+        .gift-visual img { width: 50%; border-radius: 18px; }
+        .gift-item-title { display: block; font-weight: 900; color: var(--fadu-text); font-size: 16px; margin: 20px 0 8px; border-left: 3px solid var(--fadu-pink); padding-left: 12px; }
+        .gift-item-p { font-size: 14px; color: #887a79; line-height: 1.8; margin: 0 0 15px 15px; }
 
         /* 🔗 底部導聯 */
-        .footer-links { width: 92%; margin: 0 auto 50px; text-align: center; }
-        .link-btn { display: block; width: 100%; padding: 18px 0; border-radius: 20px; margin-bottom: 15px; text-decoration: none; font-weight: 900; font-size: 16px; transition: 0.3s; }
-        .btn-web { background: white; color: var(--text-main); border: 1px solid #eee; }
-        .btn-store { background: var(--fadu-rose); color: white; }
+        .footer-links { width: 92%; margin: 0 auto 60px; text-align: center; }
+        .link-btn { display: block; width: 100%; padding: 20px 0; border-radius: 22px; margin-bottom: 15px; text-decoration: none; font-weight: 900; font-size: 16px; transition: 0.3s; }
+        .btn-web { background: white; color: var(--fadu-text); border: 1.5px solid var(--fadu-rose-soft); }
+        .btn-store { background: var(--fadu-pink); color: white; }
 
-        /* 📦 彈窗樣式優化 (針對彈窗跑版修正) */
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(10px); }
-        .modal-content { background: var(--fadu-warm); margin: 5% auto; padding: 0; width: 92%; max-height: 85vh; border-radius: 30px; overflow-y: auto; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.3); }
-        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; color: var(--fadu-taupe); z-index: 100; cursor: pointer; }
+        /* 📦 彈窗優化樣式 */
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+        .modal-content { background: var(--fadu-cream); margin: 5% auto; padding: 0; width: 92%; max-height: 85vh; border-radius: 35px; overflow-y: auto; position: relative; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 30px; color: var(--fadu-text); z-index: 100; cursor: pointer; }
         .modal-body { padding: 40px 15px 30px; }
-        .modal-title { text-align: center; font-size: 20px; font-weight: 900; margin-bottom: 25px; color: var(--fadu-rose); letter-spacing: 0.1em; }
-        
-        /* 彈窗內卡片修正 */
-        .visual-item-full { background: #fff; border-radius: 20px; margin-bottom: 20px; padding: 15px; border: 1px solid #fdf2f3; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
-        .item-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed #eee; padding-bottom: 12px; gap: 10px; }
-        .item-header h4 { margin: 0; font-size: 16px; font-weight: 900; color: var(--text-main); flex-shrink: 0; }
-        .price-badge-small { background: var(--fadu-rose); color: #fff; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 700; white-space: nowrap; }
-        
-        /* 圖片網格修正 */
+        .modal-title { text-align: center; font-size: 22px; font-weight: 900; margin-bottom: 25px; color: var(--fadu-pink); }
+        .visual-item-full { background: #fff; border-radius: 25px; margin-bottom: 20px; padding: 18px; border: 1px solid var(--fadu-rose-soft); }
+        .item-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; border-bottom: 1px dashed var(--fadu-rose-soft); padding-bottom: 12px; }
+        .item-header h4 { margin: 0; font-size: 16px; font-weight: 900; color: var(--fadu-text); }
+        .price-badge-small { background: var(--fadu-pink); color: #fff; padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 700; }
         .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .grid-img { width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; object-fit: cover; background-color: #f9f9f9; }
+        .grid-img { width: 100%; aspect-ratio: 1/1; border-radius: 12px; object-fit: cover; }
 
-        .footer { text-align: center; font-size: 11px; color: #ccc; padding-bottom: 40px; }
+        .footer { text-align: center; font-size: 12px; color: #d0c0bf; padding-bottom: 50px; }
     </style>
 </head>
 <body>
 
     <header class="header-section">
-        <span>FADOU ‧ 2026 MOTHER'S DAY</span>
+        <span>FADOU ‧ 2026 Mother's Day</span>
         <h1>致溫柔的妳<br>法朵門市母親節慶典</h1>
     </header>
 
     <div class="hero-promo-container">
         <section class="hero-promo-card">
-            <span style="font-size: 24px; font-weight: 900; color: var(--fadu-rose);">全館正品 任挑三件 85 折</span><br>
-            <span style="font-size: 15px; color: var(--fadu-gold); font-weight: 700;">✨ 滿 $4,500 即贈精品旅行收納袋 ✨</span>
+            <span class="main-promo-title">全館正品 任挑三件 85 折</span><br>
+            <span style="font-size: 16px; color: var(--fadu-gold-soft); font-weight: 700; margin-top: 10px; display: block;">✨ 滿 $4,500 即贈精品旅行收納袋 ✨</span>
             <div class="promo-sub-text">
                 即日起至 5/10，法朵實體門市全館正品內衣褲，【任挑三件享 85 折】<br>
                 <strong>快趁此機會帶媽媽女兒來挑選試穿吧！</strong>
-                <div class="promo-note">（組合商品及特價品不列入活動）</div>
+                <div style="font-size: 11px; color: #ccc; margin-top: 8px;">（組合商品及特價品不列入活動）</div>
             </div>
         </section>
     </div>
 
     <div class="welcome-gift-section">
-        <div class="welcome-header">
-            <h3><span>✦</span> FADOU 專屬歡迎禮 <span>✦</span></h3>
-        </div>
+        <div class="welcome-header"><h3>✦ FADOU 專屬歡迎禮 ✦</h3></div>
         <div class="gift-grid">
             <a href="https://lin.ee/U2TINN9" class="gift-card card-line">
-                <span class="gift-icon">💬</span>
-                <span class="gift-label">LINE FRIENDS</span>
+                <span style="font-size: 26px;">💬</span>
                 <span class="gift-main-title">加入好友<br>領內褲兌換券</span>
             </a>
             <a href="https://bmai.app/cf09c1ac" class="gift-card card-app">
-                <span class="gift-icon">📱</span>
-                <span class="gift-label">OFFICIAL APP</span>
+                <span style="font-size: 26px;">📱</span>
                 <span class="gift-main-title">下載 APP<br>首購現折 $100</span>
             </a>
         </div>
@@ -141,33 +129,31 @@
         <div class="nav-card" onclick="openModal('newModal')">
             <img src="911６首圖－藍.jpg" class="nav-img-main">
             <div class="nav-info-bar"><h2>春季新品上市</h2><span>質感機能系列 ›</span></div>
-            <div class="view-more-tag">點我看更多</div>
         </div>
         <div class="nav-card" onclick="openModal('saleModal')">
             <img src="依妹思-8080粉.jpeg" class="nav-img-main">
             <div class="nav-info-bar"><h2>門市精選折扣</h2><span>年度熱銷 3 件 $1980 ›</span></div>
-            <div class="view-more-tag">點我看更多</div>
         </div>
     </div>
 
     <div class="brand-promise">
-        <div class="promise-item"><span class="promise-icon">🇹🇼</span><span class="promise-text">MIT 台灣製造</span></div>
-        <div class="promise-item"><span class="promise-icon">🏪</span><span class="promise-text">實體門市售後</span></div>
-        <div class="promise-item"><span class="promise-icon">📐</span><span class="promise-text">專業試穿諮詢</span></div>
-        <div class="promise-item"><span class="promise-icon">☁️</span><span class="promise-text">親膚透氣材質</span></div>
+        <div class="promise-item"><span style="font-size: 18px; display: block; margin-bottom: 5px;">🇹🇼</span><span class="promise-text">MIT 台灣製造</span></div>
+        <div class="promise-item"><span style="font-size: 18px; display: block; margin-bottom: 5px;">🏪</span><span class="promise-text">實體門市售後</span></div>
+        <div class="promise-item"><span style="font-size: 18px; display: block; margin-bottom: 5px;">📐</span><span class="promise-text">專業試穿諮詢</span></div>
+        <div class="promise-item"><span style="font-size: 18px; display: block; margin-bottom: 5px;">☁️</span><span class="promise-text">親膚透氣材質</span></div>
     </div>
 
-    <div class="tips-section">
+    <div class="tips-section" style="width: 92%; margin: 0 auto 50px;">
         <div class="tip-card-dashed">
-            <span style="font-size: 24px;">🎀</span>
-            <div style="font-size: 14px; line-height: 1.5; color: var(--fadu-rose); font-weight: 700;">
+            <span style="font-size: 26px;">🎀</span>
+            <div style="font-size: 14px; line-height: 1.6; color: var(--fadu-text); font-weight: 700;">
                 成套穿搭，心情跟著美起來！<br>
-                <span style="font-size: 12px; color: var(--fadu-taupe); font-weight: 400;">試穿時可以請門市人員拿「成套小褲」給妳搭配試比唷。</span>
+                <span style="font-size: 12px; color: #998a89; font-weight: 400;">試穿時可以請門市人員拿「成套小褲」搭配唷。</span>
             </div>
         </div>
         <div class="tip-card-solid">
-            <span style="font-weight: 900; color: var(--fadu-brown); font-size: 15px; display: block; margin-bottom: 12px; border-left: 4px solid var(--fadu-gold); padding-left: 10px;">🫧 私藏小撇步：讓內衣穿更久</span>
-            <div style="font-size: 13px; color: #666; line-height: 1.7;">
+            <span class="tip-title">🫧 私藏小撇步：讓內衣穿更久</span>
+            <div style="font-size: 13px; color: #887a79; line-height: 1.8;">
                 親愛的，洗內衣記得用<b>中性洗劑冷水手洗</b>唷！輕輕擠掉水分後，平放或倒掛晾乾最能保護纖維。
             </div>
         </div>
@@ -175,8 +161,16 @@
 
     <section class="gift-showcase">
         <div class="limit-tag">限量 50 份，送完為止</div>
-        <h3 class="gift-title">限量滿額禮：精品旅行收納袋</h3>
+        <h3 class="gift-title">滿額禮：精品旅行收納袋</h3>
         <div class="gift-visual"><img src="IMG_4947.JPG"><img src="IMG_4948.JPG"></div>
+        <div class="gift-text-block">
+            <span class="gift-item-title">專屬分層收納空間</span>
+            <p class="gift-item-p">專為內衣設計獨立格層，確保貼身衣物不變形，衛生且整潔。</p>
+            <span class="gift-item-title">霧面絲綢質感材質</span>
+            <p class="gift-item-p">選用溫潤防潑水布料，質地輕盈，為媽咪的旅行增添優雅質感。</p>
+            <span class="gift-item-title">隱藏式便利提把設計</span>
+            <p class="gift-item-p">居家掛放或行李箱收納皆輕鬆提拿，是媽咪出遊的最佳伴侶。</p>
+        </div>
     </section>
 
     <div class="footer-links">
@@ -193,64 +187,40 @@
                 <div class="modal-title">門市精選折扣</div>
                 
                 <div class="visual-item-full">
-                    <div class="item-header">
-                        <h4>舒適內衣</h4>
-                        <span class="price-badge-small">3件 $1980</span>
-                    </div>
+                    <div class="item-header"><h4>舒適內衣</h4><span class="price-badge-small">3件 $1980</span></div>
                     <div class="image-grid">
-                        <img src="依妹思-8080粉.jpeg" class="grid-img">
-                        <img src="依妹思-8132紫.jpeg" class="grid-img">
-                        <img src="9011牛仔＋抹茶首圖-3.jpg" class="grid-img">
-                        <img src="9013首圖-20.jpg" class="grid-img">
+                        <img src="依妹思-8080粉.jpeg" class="grid-img"><img src="依妹思-8132紫.jpeg" class="grid-img">
+                        <img src="9011牛仔＋抹茶首圖-3.jpg" class="grid-img"><img src="9013首圖-20.jpg" class="grid-img">
                     </div>
                 </div>
 
                 <div class="visual-item-full">
-                    <div class="item-header">
-                        <h4>質感機能內衣</h4>
-                        <span class="price-badge-small">買一送一</span>
-                    </div>
+                    <div class="item-header"><h4>質感機能內衣</h4><span class="price-badge-small">買一送一</span></div>
                     <div class="image-grid">
-                        <img src="911６首圖－藍.jpg" class="grid-img">
-                        <img src="9015-首圖-09.jpg" class="grid-img">
-                        <img src="玳蕾綺6391紫.jpeg" class="grid-img">
-                        <img src="玳蕾綺6383粉.jpeg" class="grid-img">
+                        <img src="911６首圖－藍.jpg" class="grid-img"><img src="9015-首圖-09.jpg" class="grid-img">
+                        <img src="玳蕾綺6391紫.jpeg" class="grid-img"><img src="玳蕾綺6383粉.jpeg" class="grid-img">
                     </div>
                 </div>
 
                 <div class="visual-item-full">
-                    <div class="item-header">
-                        <h4>顯瘦大罩杯內衣</h4>
-                        <span class="price-badge-small">2件 79折</span>
-                    </div>
+                    <div class="item-header"><h4>顯瘦大罩杯內衣</h4><span class="price-badge-small">2件 79折</span></div>
                     <div class="image-grid">
-                        <img src="9708黑.png" class="grid-img">
-                        <img src="9708藍.png" class="grid-img">
+                        <img src="9708黑.png" class="grid-img"><img src="9708藍.png" class="grid-img">
                     </div>
                 </div>
 
                 <div class="visual-item-full">
-                    <div class="item-header">
-                        <h4>舒適小褲</h4>
-                        <span class="price-badge-small">10件 8折</span>
-                    </div>
+                    <div class="item-header"><h4>舒適小褲</h4><span class="price-badge-small">10件 8折</span></div>
                     <div class="image-grid">
-                        <img src="21315-對色首圖-08.jpg" class="grid-img">
-                        <img src="21322首圖-07.jpg" class="grid-img">
-                        <img src="2101首圖－新色-14.jpg" class="grid-img">
-                        <img src="2610首圖-26.jpg" class="grid-img">
+                        <img src="21315-對色首圖-08.jpg" class="grid-img"><img src="21322首圖-07.jpg" class="grid-img">
+                        <img src="2101首圖－新色-14.jpg" class="grid-img"><img src="2610首圖-26.jpg" class="grid-img">
                     </div>
                 </div>
 
                 <div class="visual-item-full">
-                    <div class="item-header">
-                        <h4>法朵機能男褲</h4>
-                        <span class="price-badge-small">3件 $799 起</span>
-                    </div>
+                    <div class="item-header"><h4>法朵機能男褲</h4><span class="price-badge-small">3件 $799 起</span></div>
                     <div class="image-grid">
-                        <img src="7241首圖M-XL.jpg" class="grid-img">
-                        <img src="7241首圖-科幻銀.jpg" class="grid-img">
-                        <img src="7541-2.jpg" class="grid-img">
+                        <img src="7241首圖M-XL.jpg" class="grid-img"><img src="7241首圖-科幻銀.jpg" class="grid-img"><img src="7541-2.jpg" class="grid-img">
                     </div>
                 </div>
             </div>
@@ -263,13 +233,9 @@
             <div class="modal-body">
                 <div class="modal-title">春季新品推薦</div>
                 <div class="visual-item-full">
-                    <div class="item-header">
-                        <h4>質感機能系列</h4>
-                        <span class="price-badge-small">NEW ARRIVAL</span>
-                    </div>
+                    <div class="item-header"><h4>質感機能系列</h4><span class="price-badge-small">NEW ARRIVAL</span></div>
                     <div class="image-grid">
-                        <img src="911６首圖－藍.jpg" class="grid-img">
-                        <img src="9015-首圖-09.jpg" class="grid-img">
+                        <img src="911６首圖－藍.jpg" class="grid-img"><img src="9015-首圖-09.jpg" class="grid-img">
                     </div>
                 </div>
             </div>
